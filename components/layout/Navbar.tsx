@@ -18,24 +18,20 @@ const Navbar = () => {
   });
 
   return (
-    <nav className="container_fluid xl:center space-x-16 py-[clamp(1.5rem,1.502vw+1.148rem,2.5rem)] px-4 font-kanit">
-      {isDesktopOrLaptop && (
-        <>
-          <NavLink label="About" />
-          <NavLink label="Services" />
+    <nav className="container_fluid py-[clamp(1.5rem,1.502vw+1.148rem,2.5rem)] px-4 font-kanit">
+      <div className="hidden lg:block xl:center space-x-16">
+        <NavLink label="About" />
+        <NavLink label="Services" />
 
-          <h2 className="font-black text-4xl">Allah&apos;s Will</h2>
+        <h2 className="font-black text-4xl">Allah&apos;s Will</h2>
 
-          <NavLink label="Portfolio" />
-          <NavLink label="Contact" />
-        </>
-      )}
+        <NavLink label="Portfolio" />
+        <NavLink label="Contact" />
+      </div>
 
-      {!isDesktopOrLaptop && (
-        <>
-          <h2 className="font-black text-4xl">Allah&apos;s Will</h2>
-        </>
-      )}
+      <div className="lg:hidden">
+        <h2 className="font-black text-4xl">Allah&apos;s Will</h2>
+      </div>
     </nav>
   );
 };

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import flowbite from "flowbite-react/tailwind";
 
 const config = {
   darkMode: ["class"],
@@ -7,6 +8,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    flowbite.content(),
   ],
   prefix: "",
   theme: {
@@ -76,12 +78,12 @@ const config = {
         hero_image: "url('/images/hero_image.png')",
       },
       fontFamily: {
-        'kanit': ['var(--font-kanit)'],
-        'lato': ['var(--font-lato)'],
-      }
+        kanit: ["var(--font-kanit)"],
+        lato: ["var(--font-lato)"],
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), flowbite.plugin()],
 } satisfies Config;
 
 export default config;

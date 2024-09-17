@@ -3,6 +3,7 @@ import { Inter, Kanit, Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/layout/Footer";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={cn("antialiased", kanit.variable, lato.variable)}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

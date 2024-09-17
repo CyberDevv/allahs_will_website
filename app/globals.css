@@ -1,4 +1,9 @@
 @tailwind base;
+
+.imageHover:hover > .imagedesc {
+  @apply translate-y-0 opacity-100;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -10,14 +15,14 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: #00215B;
+    --primary: #00215b;
     --primary-foreground: 210 40% 98%;
-    --secondary: #D2153D;
-    --secondary-foreground: #FFFFFF;
-    --muted: #D2153D;
+    --secondary: #d2153d;
+    --secondary-foreground: #ffffff;
+    --muted: #d2153d;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: #D2153D;
-    --accent-foreground: #FFFFFF;
+    --accent: #d2153d;
+    --accent-foreground: #ffffff;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
@@ -42,96 +47,96 @@
 }
 
 @layer utilities {
-.container_fluid {
+  .container_fluid {
     @apply container mx-auto px-8 md:px-12 lg:px-16 xl:px-20;
-}
+  }
 
-/* Rows */
-.inline-start {
+  /* Rows */
+  .inline-start {
     @apply inline-flex items-center justify-start;
-}
+  }
 
-.inline-center {
+  .inline-center {
     @apply inline-flex items-center justify-center;
-}
+  }
 
-.inline-start-center {
+  .inline-start-center {
     @apply inline-flex items-center justify-start;
-}
+  }
 
-.inline-end {
+  .inline-end {
     @apply inline-flex items-center justify-end;
-}
+  }
 
-.inline-between {
+  .inline-between {
     @apply inline-flex items-center justify-between;
-}
+  }
 
-.inline-evenly {
+  .inline-evenly {
     @apply inline-flex items-center justify-evenly;
-}
+  }
 
-.start {
+  .start {
     @apply flex items-center justify-start;
-}
+  }
 
-.start-start {
+  .start-start {
     @apply flex items-start justify-start;
-}
+  }
 
-.center-start {
+  .center-start {
     @apply flex items-start justify-center;
-}
+  }
 
-.center {
+  .center {
     @apply flex items-center justify-center;
-}
+  }
 
-.end {
+  .end {
     @apply flex items-center justify-end;
-}
+  }
 
-.between {
+  .between {
     @apply flex flex-row items-center justify-between;
-}
+  }
 
-.between-start {
+  .between-start {
     @apply flex flex-row items-start justify-between;
-}
+  }
 
-.evenly {
+  .evenly {
     @apply flex items-center justify-evenly;
-}
+  }
 
-.around {
+  .around {
     @apply flex items-center justify-around;
-}
+  }
 
-/* Cols */
-.col-start {
+  /* Cols */
+  .col-start {
     @apply flex flex-col items-start justify-center;
-}
+  }
 
-.col-start-start {
+  .col-start-start {
     @apply flex flex-col items-start justify-start;
-}
+  }
 
-.col-center {
+  .col-center {
     @apply flex flex-col items-center justify-center;
-}
+  }
 
-.inline-col-center {
+  .inline-col-center {
     @apply inline-flex flex-col items-center justify-center;
-}
+  }
 
-.col-end {
+  .col-end {
     @apply flex flex-col items-end justify-center;
-}
+  }
 
-.col-between {
+  .col-between {
     @apply flex flex-col items-start justify-between;
-}
-.col-start-center {
-@apply flex flex-col items-center justify-start;
-}
+  }
+  .col-start-center {
+    @apply flex flex-col items-center justify-start;
+  }
 }

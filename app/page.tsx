@@ -50,13 +50,13 @@ const Infrastructure = ({
 function HeroSection() {
   return (
     <section className="bg-hero_image bg-cover bg-no-repeat">
-      <div className="bg-black h-[calc(70vh-91.75px)] xl:h-[calc(100vh-120px)] xl:max-h-[890px] bg-opacity-40 col-start">
+      <div className="bg-black h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-[calc(100vh-387px)] xl:h-[calc(100vh-120px)] xl:max-h-[946px] bg-opacity-40 col-start">
         <div className="container_fluid">
           <div className="xl:w-[65%] col-center xl:block">
-            <h2 className="xl:leading-[84px] leading-tight text-[clamp(3rem,3.005vw+2.296rem,5rem)] text-white text-center xl:text-left">
+            <h2 className="xl:leading-[84px] leading-tight text-[clamp(2.5rem,3.448vw+1.703rem,5rem)] text-white text-center xl:text-left">
               <span className="font-semibold font-kanit">
                 Construction solution
-              </span>{" "}
+              </span>{" "} <br className="hidden sm:inline-block"/>
               for everyone
             </h2>
             <p className="xl:w-[90%] text-[clamp(0.938rem,0.188vw+0.894rem,1.063rem)] leading-[28px] text-[#EBECEE] mt-[clamp(2rem,0.751vw+1.824rem,2.5rem)] mb-[clamp(2.6rem,0.789vw+2.415rem,3.125rem)] text-center xl:text-left">
@@ -86,7 +86,7 @@ function Infrastructures() {
   return (
     <section className="xl:flex justify-center items-start">
       <div className="grid grid-cols-2 xl:start">
-        <div className="bg-primary text-primary-foreground px-10 py-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] space-y-[clamp(0rem,0.939vw+-0.22rem,0.625rem)] w-full xl:w-fit col-center xl:col-start">
+        <div className="bg-primary text-primary-foreground px-10 py-[clamp(2rem,2.414vw+1.442rem,3.75rem)] space-y-[clamp(0rem,0.939vw+-0.22rem,0.625rem)] w-full xl:w-fit col-center xl:col-start">
           <p className="font-kanit font-bold text-[clamp(4.375rem,2.817vw+3.715rem,6.25rem)] xl:leading-[84px]">
             245
           </p>
@@ -94,7 +94,7 @@ function Infrastructures() {
             Completed Projects
           </p>
         </div>
-        <div className="bg-secondary text-secondary-foreground px-10 py-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] space-y-[clamp(0rem,0.939vw+-0.22rem,0.625rem)] w-full xl:w-fit col-center xl:col-start">
+        <div className="bg-secondary text-secondary-foreground px-10 py-[clamp(2rem,2.414vw+1.442rem,3.75rem)] space-y-[clamp(0rem,0.939vw+-0.22rem,0.625rem)] w-full xl:w-fit col-center xl:col-start">
           <p className="font-kanit font-bold text-[clamp(4.375rem,2.817vw+3.715rem,6.25rem)] xl:leading-[84px]">
             25+
           </p>
@@ -105,11 +105,11 @@ function Infrastructures() {
       </div>
       <div className="bg-white text-primary w-full xl:max-w-[500px] xl:shadow-2xl xl:-mt-48">
         <div className="bg-[#001ED3] h-[clamp(0.313rem,0.206vw+0.265rem,0.45rem)]" />
-        <div className="px-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] py-20 xl:py-[30px] max-w-lg">
-          <h6 className="text-primary font-kanit font-medium text-[clamp(1.625rem,0.751vw+1.449rem,2.125rem)] leading-[38px] text-center xl:text-left">
+        <div className="px-[clamp(2rem,2.414vw+1.442rem,3.75rem)] py-20 xl:py-[30px] max-w-md md:max-w-lg mx-auto lg:max-w-none">
+          <h6 className="text-primary font-kanit font-medium text-[clamp(1.625rem,0.751vw+1.449rem,2.125rem)] leading-[38px] text-center xl:text-left lg:w-1/2 mx-auto xl:w-full">
             We Construct and Manage Places and Infrastructures
           </h6>
-          <div className="mt-10 space-y-8 xl:space-y-5">
+          <div className="mt-10 space-y-8 xl:space-y-5 lg:grid lg:grid-cols-3 lg:space-y-0 lg:space-x-4 xl:space-x-0 xl:block">
             <Infrastructure
               svg="general"
               label="General Contact"
@@ -152,10 +152,10 @@ function AboutUs() {
             isOdd ? "bg-secondary/80" : "bg-primary/80"
           } h-full w-full px-[clamp(1.875rem,0.939vw+1.655rem,2.5rem)] py-[clamp(2.5rem,0.939vw+2.28rem,3.125rem)] text-primary-foreground flex flex-col`}
         >
-          <h3 className="font-kanit font-semibold text-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)] ">
+          <h3 className="font-kanit font-semibold text-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)] 2xl:text-4xl">
             {label}
           </h3>
-          <p className="font-lato font-medium leading-[28px] text-sm text-[#D4D7DD] mt-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)]">
+          <p className="font-lato font-medium leading-[28px] text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] 2xl:text-base text-[#D4D7DD] mt-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)]">
             {desc}
           </p>
 
@@ -178,12 +178,12 @@ function AboutUs() {
 
   return (
     <section>
-      <div className="container_fluid py-[clamp(6.25rem,9.39vw+4.049rem,12.5rem)] xl:start xl:space-x-20 space-y-12 xl:space-y-0">
-        <div className="w-full col-center xl:block">
-          <h6 className="font-kanit uppercase font-medium text-sm leading-[15px] text-secondary">
+      <div className="container_fluid py-[clamp(5rem,10.345vw+2.608rem,12.5rem)] xl:start xl:space-x-20 space-y-12 xl:space-y-0">
+        <div className="w-full col-center xl:block max-w-md lg:max-w-lg mx-auto xl:max-w-none">
+          <h6 className="font-kanit uppercase font-medium text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] leading-[15px] text-secondary">
             About us
           </h6>
-          <h4 className="text-primary font-kanit font-semibold text-[clamp(2.25rem,1.785vw+1.832rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center xl:text-start">
+          <h4 className="text-primary font-kanit font-semibold text-[clamp(2rem,1.983vw+1.541rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center xl:text-start">
             With our knowledge we guarente success
           </h4>
           <p className="font-lato text-[#41444B] text-[clamp(0.938rem,0.188vw+0.894rem,1.063rem)] leading-normal xl:leading-[28px] mt-[clamp(1.25rem,0.939vw+1.03rem,1.875rem)] text-center xl:text-start">
@@ -206,20 +206,21 @@ function AboutUs() {
           </Button>
         </div>
         <Image
-          className="w-full rounded-2xl"
+          className="w-full rounded-2xl max-h-[600px] object-cover"
           src="/images/about.png"
           width={500}
           height={600}
           alt="about our company"
         />
       </div>
-      <div className="my-[100px] grid xl:grid-cols-5 container_fluid xl:!max-w-none xl:!px-0 rounded-2xl xl:rounded-none overflow-hidden">
+
+      <div className="my-[clamp(2.5rem,5.172vw+1.304rem,6.25rem)] grid lg:grid-cols-4 xl:grid-cols-5 container_fluid lg:max-w-5xl mx-auto xl:!max-w-none xl:!px-0 rounded-2xl lg:rounded-none overflow-hidden max-w-md md:max-w-lg">
         <Image
           src="/images/services.png"
           width={850}
           height={600}
           alt="services"
-          className="col-span-2"
+          className="col-span-2 max-h-[500px] w-full object-cover object-center"
         />
         <Service
           label="Research & Analysis"
@@ -249,14 +250,14 @@ function OurWorks() {
     desc: string;
     title: string;
   }) => (
-    <div className="relative overflow-hidden imageHover">
+    <div className="relative overflow-hidden imageHover rounded-lg">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="h-auto max-w-full rounded-lg" src={src} alt="" />
+      <img className="h-full object-cover max-w-full rounded-lg" src={src} alt="" />
       <div className="absolute bg-black/70 top-0 bottom-0 w-full text-white text-center opacity-1 translate-y-[100%] imagedesc transition-all col-center">
-        <h4 className="font-medium text-lg tracking-wide leading-[26px]">
+        <h4 className="font-medium text-[clamp(1rem,0.188vw+0.956rem,1.125rem)] tracking-wide leading-[26px]">
           {title}
         </h4>
-        <p className="mt-1 text-gray-300 text-sm">{desc}</p>
+        <p className="mt-1 text-gray-300 text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] hidden md:inline ">{desc}</p>
         <Button variant={"secondary"} className="mt-4 text-white">
           Check it out
         </Button>
@@ -265,15 +266,15 @@ function OurWorks() {
   );
 
   return (
-    <section className="container_fluid py-[clamp(6.25rem,9.39vw+4.049rem,12.5rem)]">
-      <h6 className="font-kanit uppercase font-medium text-sm leading-[15px] text-secondary text-center">
+    <section className="container_fluid py-[clamp(5rem,10.345vw+2.608rem,12.5rem)]">
+      <h6 className="font-kanit uppercase font-medium text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] leading-[15px] text-secondary text-center">
         Our Works
       </h6>
-      <h4 className="text-primary font-kanit font-semibold text-[clamp(2.25rem,1.785vw+1.832rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center">
+      <h4 className="text-primary font-kanit font-semibold text-[clamp(2rem,1.983vw+1.541rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center">
         Our Special Projects
       </h4>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
         <div className="grid gap-4">
           <PhotoComp
             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
@@ -301,7 +302,7 @@ function OurWorks() {
             title="Full Body"
           />
         </div>
-        <div className="grid gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-1 col-span-2 lg:col-span-1 gap-4">
           <PhotoComp
             src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg
           "
@@ -322,7 +323,7 @@ function OurWorks() {
 
 function Location() {
   return (
-    <section className="py-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] max-w-[1900px]">
+    <section className="py-[clamp(2rem,2.414vw+1.442rem,3.75rem)] mx-auto max-w-[1900px]">
       <div className="relative">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.4479614234947!2d3.960497759591075!3d7.415572293806846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039933161bf7983%3A0xbef1f39669a64d13!2sAllah&#39;s%20Will%20Steel%20Construction%20Nig.%20Ltd!5e0!3m2!1sen!2sng!4v1726408169614!5m2!1sen!2sng"
@@ -336,42 +337,45 @@ function Location() {
         />
       </div>
 
-      <div className="relative mt-20 xl:mt-32 container_fluid w-full lg:between">
-        <div className=" bg-white text-primary w-full xl:max-w-[500px] xl:shadow-2xl xl:-mt-48">
+      <div className="relative mt-20 md:-mt-20 xl:mt-32 container_fluid w-full md:grid md:grid-cols-2 md:gap-4 xl:between xl:space-x-8">
+        <div className=" bg-white text-primary w-full max-w-md md:max-w-lg xl:max-w-[500px] md:shadow-2xl xl:-mt-48 mx-auto">
           <div className="bg-secondary h-[clamp(0.313rem,0.206vw+0.265rem,0.45rem)]" />
-          <div className="px-4 md:px-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] py-10 lg:py-20 xl:py-[30px] w-full xl:min-w-[500px]">
-            <h6 className="font-kanit uppercase font-light text-sm leading-[15px] text-[#41444B] text-center xl:text-left">
+          <div className="px-4 xl:px-[clamp(2rem,2.414vw+1.442rem,3.75rem)] py-10 lg:py-5 xl:py-[30px] w-full xl:min-w-[500px]">
+            <h6 className="font-kanit uppercase font-light text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] leading-[15px] text-[#41444B] text-center xl:text-left">
               Company Address
             </h6>
-            <p className="font-medium font-kanit text-[clamp(1.25rem,0.69vw+1.091rem,1.75rem)] leading-[32px] text-center xl:text-left mt-[10px]">
+            <p className="font-medium font-kanit text-[clamp(1rem,1.034vw+0.761rem,1.75rem)] leading-[clamp(1.25rem,1.034vw+1.011rem,2rem)] text-center xl:text-left mt-[10px]">
               P. O Box 8093, Klm 127 - 500, Ibadan - Lagos Expressway, Ogunpa
               Channelization, Adjacent Soka Bus Stop, Mapo Hill, Ibadan
             </p>
           </div>
         </div>
-        <div className="text-primary w-full xl:-mt-48 px-4 md:px-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] md:py-10 xl:py-[30px] center lg:start space-x-5">
-          <Image src="/svg/phone.svg" width={65} height={65} alt="phone" />
-          <div>
-            <h6 className="font-kanit uppercase font-light text-sm leading-[15px] text-[#41444B]">
-              Company Phones
-            </h6>
-            <p className="font-medium font-kanit text-[clamp(1rem,0.345vw+0.92rem,1.25rem)] leading-[32px] text-center xl:text-left mt-[10px]">
-              +234 8034552211
-            </p>
-            <p className="font-medium font-kanit text-[clamp(1rem,0.345vw+0.92rem,1.25rem)] leading-[32px] text-center xl:text-left mt-[5px]">
-              +234 8034552211
-            </p>
+
+        <div className="xl:-mt-48 xl:between w-full xl:space-x-4">
+          <div className="bg-white text-primary w-full px-4 md:py-5 xl:py-[30px] center xl:start space-x-5 md:shadow-2xl">
+            <Image src="/svg/phone.svg" width={65} height={65} alt="phone" />
+            <div>
+              <h6 className="font-kanit uppercase font-light text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] leading-[15px] text-[#41444B]">
+                Company Phones
+              </h6>
+              <p className="font-medium font-kanit text-[clamp(0.875rem,0.517vw+0.755rem,1.25rem)] leading-[32px] text-center xl:text-left mt-[10px]">
+                +234 8034552211
+              </p>
+              <p className="font-medium font-kanit text-[clamp(0.875rem,0.517vw+0.755rem,1.25rem)] leading-[32px] text-center xl:text-left mt-[5px]">
+                +234 8034552211
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="text-primary w-full xl:-mt-48 px-4 md:px-[clamp(2.5rem,1.878vw+2.06rem,3.75rem)] md:py-10 xl:py-[30px] center lg:start space-x-5 mt-10">
-          <Image src="/svg/email.svg" width={65} height={65} alt="phone" />
-          <div>
-            <h6 className="font-kanit uppercase font-light text-sm leading-[15px] text-[#41444B]">
-              Email
-            </h6>
-            <p className="font-medium font-kanit text-[clamp(1rem,0.345vw+0.92rem,1.25rem)] leading-[32px] text-center xl:text-left mt-[10px]">
-              awsc@gmail.com
-            </p>
+          <div className="bg-white text-primary w-full px-4 md:py-5 xl:py-[30px] center xl:start space-x-5 md:shadow-2xl mt-5 xl:mt-0">
+            <Image src="/svg/email.svg" width={65} height={65} alt="phone" />
+            <div>
+              <h6 className="font-kanit uppercase font-light text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] leading-[15px] text-[#41444B]">
+                Email
+              </h6>
+              <p className="font-medium font-kanit text-[clamp(0.875rem,0.517vw+0.755rem,1.25rem)] leading-[32px] text-center xl:text-left mt-[10px]">
+                awsc@gmail.com
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -407,16 +411,16 @@ function Testimonials() {
   };
 
   return (
-    <section className="container_fluid py-[clamp(6.25rem,9.39vw+4.049rem,12.5rem)]">
-      <h6 className="font-kanit uppercase font-medium text-sm leading-[15px] text-secondary text-center">
+    <section className="container_fluid py-[clamp(5rem,10.345vw+2.608rem,12.5rem)]">
+      <h6 className="font-kanit uppercase font-medium text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] leading-[15px] text-secondary text-center">
         Testimonials
       </h6>
-      <h4 className="text-primary font-kanit font-semibold text-[clamp(2.25rem,1.785vw+1.832rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center">
+      <h4 className="text-primary font-kanit font-semibold text-[clamp(2rem,1.983vw+1.541rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center">
         Our Clients said
       </h4>
 
       <div
-        className="col-center lg:flex-row lg:start space-x-0 lg:space-x-14 relative w-full"
+        className="col-center lg:flex-row lg:start space-x-0 lg:space-x-14 max-w-md lg:max-w-none mx-auto relative w-full"
         id="default-carousel"
         data-carousel="slide"
       >

@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 
 const NavLink = ({ label }: { label: string }) => {
   return (
@@ -13,24 +13,32 @@ const NavLink = ({ label }: { label: string }) => {
 };
 
 const Navbar = () => {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-width: 1280px)",
-  });
-
   return (
-    <nav className="container_fluid py-[clamp(1.5rem,1.502vw+1.148rem,2.5rem)] px-4 font-kanit">
-      <div className="hidden lg:block xl:center space-x-16">
+    <nav className="container_fluid py-[clamp(1rem,1.724vw+0.601rem,2.25rem)] px-4 font-kanit">
+      <div className="hidden lg:block lg:center space-x-16">
         <NavLink label="About" />
         <NavLink label="Services" />
 
-        <h2 className="font-black text-4xl">Allah&apos;s Will</h2>
+        <Image
+          src="/images/logo.png"
+          width={988}
+          height={642}
+          alt="Logo"
+          className="w-24"
+        />
 
         <NavLink label="Portfolio" />
         <NavLink label="Contact" />
       </div>
 
       <div className="lg:hidden">
-        <h2 className="font-black text-4xl">Allah&apos;s Will</h2>
+        <Image
+          src="/images/logo.png"
+          width={988}
+          height={642}
+          alt="Logo"
+          className="w-20"
+        />
       </div>
     </nav>
   );

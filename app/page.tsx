@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Carousel } from "flowbite-react";
 import type { CustomFlowbiteTheme } from "flowbite-react";
 import Link from "next/link";
+import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+import { LayoutGrid } from "@/components/ui/layout-grid";
 
 const customTheme: CustomFlowbiteTheme["carousel"] = {
   indicators: {
@@ -56,7 +58,8 @@ function HeroSection() {
             <h2 className="xl:leading-[84px] leading-tight text-[clamp(2.5rem,3.448vw+1.703rem,5rem)] text-white text-center xl:text-left">
               <span className="font-semibold font-kanit">
                 Construction solution
-              </span>{" "} <br className="hidden sm:inline-block"/>
+              </span>{" "}
+              <br className="hidden sm:inline-block" />
               for everyone
             </h2>
             <p className="xl:w-[90%] text-[clamp(0.938rem,0.188vw+0.894rem,1.063rem)] leading-[28px] text-[#EBECEE] mt-[clamp(2rem,0.751vw+1.824rem,2.5rem)] mb-[clamp(2.6rem,0.789vw+2.415rem,3.125rem)] text-center xl:text-left">
@@ -241,29 +244,74 @@ function AboutUs() {
 }
 
 function OurWorks() {
-  const PhotoComp = ({
-    src,
-    desc,
-    title,
-  }: {
-    src: string;
-    desc: string;
-    title: string;
-  }) => (
-    <div className="relative overflow-hidden imageHover rounded-lg">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="h-full object-cover max-w-full rounded-lg" src={src} alt="" />
-      <div className="absolute bg-black/70 top-0 bottom-0 w-full text-white text-center opacity-1 translate-y-[100%] imagedesc transition-all col-center">
-        <h4 className="font-medium text-[clamp(1rem,0.188vw+0.956rem,1.125rem)] tracking-wide leading-[26px]">
-          {title}
-        </h4>
-        <p className="mt-1 text-gray-300 text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] hidden md:inline ">{desc}</p>
-        <Button variant={"secondary"} className="mt-4 text-white">
-          Check it out
-        </Button>
+  const ProjectDesc = ({ title, desc }: { title: string; desc: string }) => {
+    return (
+      <div>
+        <p className="font-bold md:text-4xl text-xl text-white">{title}</p>
+        <p className="font-normal text-base text-white"></p>
+        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+          {desc}
+        </p>
+
+        <Button>Check it out</Button>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const projects = [
+    {
+      id: 1,
+      content: (
+        <ProjectDesc
+          title="Flat Body"
+          desc="A serene and tranquil retreat, this house in the woods offers a peaceful
+          escape from the hustle and bustle of city life."
+        />
+      ),
+      className: "md:col-span-2",
+      thumbnail: "/images/project1.jpg",
+      title: "Flat Body",
+    },
+    {
+      id: 2,
+      content: (
+        <ProjectDesc
+          title="Flat Body"
+          desc="A serene and tranquil retreat, this house in the woods offers a peaceful
+          escape from the hustle and bustle of city life."
+        />
+      ),
+      className: "col-span-1",
+      thumbnail: "/images/project2.jpg",
+      title: "Flat Body",
+    },
+    {
+      id: 3,
+      content: (
+        <ProjectDesc
+          title="Flat Body"
+          desc="A serene and tranquil retreat, this house in the woods offers a peaceful
+          escape from the hustle and bustle of city life."
+        />
+      ),
+      className: "col-span-1",
+      thumbnail: "/images/project3.jpg",
+      title: "Flat Body",
+    },
+    {
+      id: 4,
+      content: (
+        <ProjectDesc
+          title="Flat Body"
+          desc="A serene and tranquil retreat, this house in the woods offers a peaceful
+          escape from the hustle and bustle of city life."
+        />
+      ),
+      className: "md:col-span-2",
+      thumbnail: "/images/project4.jpg",
+      title: "Flat Body",
+    },
+  ];
 
   return (
     <section className="container_fluid py-[clamp(5rem,10.345vw+2.608rem,12.5rem)]">
@@ -274,48 +322,8 @@ function OurWorks() {
         Our Special Projects
       </h4>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-        <div className="grid gap-4">
-          <PhotoComp
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
-            desc="photo.description"
-            title="Flat Body"
-          />
-          <PhotoComp
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg
-          "
-            desc="photo.description"
-            title="Flat Body"
-          />
-        </div>
-        <div className="grid gap-4">
-          <PhotoComp
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg
-              "
-            desc="photo.description"
-            title="Flat Body"
-          />
-          <PhotoComp
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg
-              "
-            desc="photo.description"
-            title="Full Body"
-          />
-        </div>
-        <div className="grid grid-cols-2 lg:grid-cols-1 col-span-2 lg:col-span-1 gap-4">
-          <PhotoComp
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg
-          "
-            desc="photo.description"
-            title="Flat Body"
-          />
-          <PhotoComp
-            src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg
-          "
-            desc="photo.description"
-            title="Flat Body"
-          />
-        </div>
+      <div className="h-screen">
+        <LayoutGrid cards={projects} />
       </div>
     </section>
   );

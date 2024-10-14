@@ -1,10 +1,13 @@
+"use client";
+
+import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { Carousel } from "flowbite-react";
-import type { CustomFlowbiteTheme } from "flowbite-react";
-import Link from "next/link";
-import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
 import { LayoutGrid } from "@/components/ui/layout-grid";
+import { FeaturesSectionDemo } from "@/components/ui/ServicesPlate";
+import type { CustomFlowbiteTheme } from "flowbite-react";
+import { Carousel } from "flowbite-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const customTheme: CustomFlowbiteTheme["carousel"] = {
   indicators: {
@@ -51,37 +54,53 @@ const Infrastructure = ({
 
 function HeroSection() {
   return (
-    <section className="bg-hero_image bg-cover bg-no-repeat">
-      <div className="bg-black h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-[calc(100vh-387px)] xl:h-[calc(100vh-120px)] xl:max-h-[946px] bg-opacity-40 col-start">
-        <div className="container_fluid">
-          <div className="xl:w-[65%] col-center xl:block">
-            <h2 className="xl:leading-[84px] leading-tight text-[clamp(2.5rem,3.448vw+1.703rem,5rem)] text-white text-center xl:text-left">
-              <span className="font-semibold font-kanit">
-                Construction solution
-              </span>{" "}
-              <br className="hidden sm:inline-block" />
-              for everyone
-            </h2>
-            <p className="xl:w-[90%] text-[clamp(0.938rem,0.188vw+0.894rem,1.063rem)] leading-[28px] text-[#EBECEE] mt-[clamp(2rem,0.751vw+1.824rem,2.5rem)] mb-[clamp(2.6rem,0.789vw+2.415rem,3.125rem)] text-center xl:text-left">
-              In id enim odio. Nunc aliquet diam tortor, at venenatis urna
-              sagittis non. Suspendisse sodales nulla sit amet sem condimentum,
-              ac euismod nibh elementum. Praesent eu urna at sem sodales
-              venenatis. Mauris efficitur dapibus enim in posuere
-            </p>
-            <Button variant="secondary" className="py-5 px-16 h-auto">
-              Learn more
-              <Image
-                src="/svg/arrow-right.svg"
-                className="ml-[5px]"
-                width={13}
-                height={14}
-                alt="arrow-right"
-              />
-            </Button>
-          </div>
+    <>
+      <section className="bg-hero_image bg-cover bg-no-repeat">
+        <div className="bg-black h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-screen xl:max-h-[1080px] bg-opacity-40">
+          <AuroraBackground>
+            <motion.div
+              initial={{ opacity: 0.0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.3,
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="relative flex flex-col gap-4 items-center justify-center px-4 col-start"
+            >
+              <div className="container_fluid">
+                <div className="xl:w-[65%] col-center xl:block">
+                  <h2 className="xl:leading-[84px] leading-tight text-[clamp(2.5rem,3.448vw+1.703rem,5rem)] text-white text-center xl:text-left">
+                    <span className="font-semibold font-kanit">
+                      Construction solution
+                    </span>{" "}
+                    <br className="hidden sm:inline-block" />
+                    for everyone
+                  </h2>
+                  <p className="xl:w-[90%] text-[clamp(0.938rem,0.188vw+0.894rem,1.063rem)] leading-[28px] text-[#EBECEE] mt-[clamp(2rem,0.751vw+1.824rem,2.5rem)] mb-[clamp(2.6rem,0.789vw+2.415rem,3.125rem)] text-center xl:text-left">
+                    In id enim odio. Nunc aliquet diam tortor, at venenatis urna
+                    sagittis non. Suspendisse sodales nulla sit amet sem
+                    condimentum, ac euismod nibh elementum. Praesent eu urna at
+                    sem sodales venenatis. Mauris efficitur dapibus enim in
+                    posuere
+                  </p>
+                  <Button variant="secondary" className="py-5 px-16 h-auto">
+                    Learn more
+                    <Image
+                      src="/svg/arrow-right.svg"
+                      className="ml-[5px]"
+                      width={13}
+                      height={14}
+                      alt="arrow-right"
+                    />
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </AuroraBackground>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
@@ -139,46 +158,6 @@ function Infrastructures() {
 }
 
 function AboutUs() {
-  const Service = ({
-    label,
-    desc,
-    isOdd,
-  }: {
-    label: string;
-    desc: string;
-    isOdd?: boolean;
-  }) => {
-    return (
-      <div className="bg-[url('/images/service1.png')] bg-cover col-span-2 xl:col-span-1">
-        <div
-          className={` ${
-            isOdd ? "bg-secondary/80" : "bg-primary/80"
-          } h-full w-full px-[clamp(1.875rem,0.939vw+1.655rem,2.5rem)] py-[clamp(2.5rem,0.939vw+2.28rem,3.125rem)] text-primary-foreground flex flex-col`}
-        >
-          <h3 className="font-kanit font-semibold text-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)] 2xl:text-4xl">
-            {label}
-          </h3>
-          <p className="font-lato font-medium leading-[28px] text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] 2xl:text-base text-[#D4D7DD] mt-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)]">
-            {desc}
-          </p>
-
-          <Button
-            variant={!isOdd ? "secondary" : "default"}
-            className="mt-auto ml-auto"
-            size="icon"
-          >
-            <Image
-              src="/svg/arrow-right.svg"
-              width={20}
-              height={20}
-              alt="arrow-right"
-            />
-          </Button>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <section>
       <div className="container_fluid py-[clamp(5rem,10.345vw+2.608rem,12.5rem)] xl:start xl:space-x-20 space-y-12 xl:space-y-0">
@@ -208,13 +187,14 @@ function AboutUs() {
             />
           </Button>
         </div>
-        <Image
-          className="w-full rounded-2xl max-h-[600px] object-cover"
-          src="/images/about.png"
-          width={500}
-          height={600}
-          alt="about our company"
-        />
+
+          <Image
+            className="w-full rounded-2xl max-h-[600px] object-cover"
+            src="/images/about.png"
+            width={500}
+            height={600}
+            alt="about our company"
+          />
       </div>
 
       <div className="my-[clamp(2.5rem,5.172vw+1.304rem,6.25rem)] grid lg:grid-cols-4 xl:grid-cols-5 container_fluid lg:max-w-5xl mx-auto xl:!max-w-none xl:!px-0 rounded-2xl lg:rounded-none overflow-hidden max-w-md md:max-w-lg">
@@ -225,18 +205,21 @@ function AboutUs() {
           alt="services"
           className="col-span-2 max-h-[500px] w-full object-cover object-center"
         />
-        <Service
+        <FeaturesSectionDemo
           label="Research & Analysis"
           desc="Nullam tincidunt libero eu augue eleifend, vitae condimentum lacus"
+          image="service1"
         />
-        <Service
+        <FeaturesSectionDemo
           label="Research & Analysis"
           desc="Nullam tincidunt libero eu augue eleifend, vitae condimentum lacus"
           isOdd
+          image="service2"
         />
-        <Service
+        <FeaturesSectionDemo
           label="Research & Analysis"
           desc="Nullam tincidunt libero eu augue eleifend, vitae condimentum lacus"
+          image="service3"
         />
       </div>
     </section>
@@ -468,7 +451,7 @@ function Testimonials() {
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-dot-black/[0.2]">
       <HeroSection />
       <Infrastructures />
       <AboutUs />

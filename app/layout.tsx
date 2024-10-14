@@ -5,6 +5,8 @@ import Navbar from "@/components/layout/Navbar";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/layout/Footer";
 
+import React from "react";
+
 const kanit = Kanit({
   subsets: ["latin"],
   variable: "--font-kanit",
@@ -29,7 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("antialiased", kanit.variable, lato.variable)}>
-        <Navbar />
+        <div className="relative w-full flex items-center justify-center">
+          <Navbar className="top-2" />
+        </div>
         {children}
         <Footer />
       </body>

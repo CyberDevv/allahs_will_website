@@ -28,7 +28,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
+    <div className="w-full h-full px-0 py-10 lg:p-10 grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
       {cards.map((card, i) => (
         <div key={i} className={cn(card.className, "")}>
           <motion.div
@@ -46,7 +46,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
           >
             {selected?.id === card.id && <SelectedCard selected={selected} />}
             <ImageComponent card={card} />
-            <DirectionAwareHover imageUrl={card.thumbnail} ><h2 className="text-xl font-medium font-kanit">{card?.title}</h2></DirectionAwareHover>
+            <DirectionAwareHover imageUrl={card.thumbnail} ><h2 className="text-base lg:text-xl font-medium font-kanit">{card?.title}</h2></DirectionAwareHover>
           </motion.div>
         </div>
       ))}

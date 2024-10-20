@@ -162,3 +162,13 @@
   height: 100%;
   background-color: #ffffff;
 }
+
+:root {
+  --vw-screen: 1440;
+}
+
+@media (max-width: 844px) {
+  :root {
+    --vw-screen: 375;
+  }
+}

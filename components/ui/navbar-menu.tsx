@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
@@ -63,14 +64,19 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
+  className,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  className?: string;
 }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)}
-      className="relative rounded-full border border-gray-300 bg-gray-100 shadow-2xl center space-x-20 px-8 py-4"
+      className={cn(
+        "relative border border-gray-300 bg-gray-100 shadow-2xl",
+        className
+      )}
     >
       {children}
     </nav>
@@ -79,10 +85,7 @@ export const Menu = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link
-      {...rest}
-      className="text-neutral-700 hover:text-black "
-    >
+    <Link {...rest} className="text-neutral-700 hover:text-black text-[28px] leading-[32px] tracking-[-.02em] md:text-base md:leading-[22px] 2xl:text-2xl font-medium">
       {children}
     </Link>
   );

@@ -188,16 +188,16 @@ function AboutUs() {
           </Button>
         </div>
 
-          <Image
-            className="w-full rounded-2xl max-h-[600px] object-cover"
-            src="/images/about.png"
-            width={500}
-            height={600}
-            alt="about our company"
-          />
+        <Image
+          className="w-full rounded-2xl max-h-[400px] object-cover"
+          src="/images/about.png"
+          width={500}
+          height={600}
+          alt="about our company"
+        />
       </div>
 
-      <div className="my-[clamp(2.5rem,5.172vw+1.304rem,6.25rem)] grid lg:grid-cols-4 xl:grid-cols-5 container_fluid lg:max-w-5xl mx-auto xl:!max-w-none xl:!px-0 rounded-2xl lg:rounded-none overflow-hidden max-w-md md:max-w-lg">
+      <div className="my-[clamp(2.5rem,5.172vw+1.304rem,6.25rem)] grid lg:grid-cols-4 xl:grid-cols-5 container_fluid lg:max-w-5xl mx-auto xl:!max-w-[1980px] xl:!px-0 rounded-2xl lg:rounded-none overflow-hidden max-w-md md:max-w-lg">
         <Image
           src="/images/services.png"
           width={850}
@@ -230,13 +230,13 @@ function OurWorks() {
   const ProjectDesc = ({ title, desc }: { title: string; desc: string }) => {
     return (
       <div>
-        <p className="font-bold md:text-4xl text-xl text-white">{title}</p>
+        <p className="font-bold md:text-4xl text-lg text-white">{title}</p>
         <p className="font-normal text-base text-white"></p>
-        <p className="font-normal text-base my-4 max-w-lg text-neutral-200">
+        <p className="font-normal text-sm md:text-base my-4 max-w-lg text-neutral-200">
           {desc}
         </p>
 
-        <Button>Check it out</Button>
+        <Button className="text-sm md:text-base">Check it out</Button>
       </div>
     );
   };
@@ -264,7 +264,7 @@ function OurWorks() {
           escape from the hustle and bustle of city life."
         />
       ),
-      className: "col-span-1",
+      className: "md:col-span-1",
       thumbnail: "/images/project2.jpg",
       title: "Flat Body",
     },
@@ -277,7 +277,7 @@ function OurWorks() {
           escape from the hustle and bustle of city life."
         />
       ),
-      className: "col-span-1",
+      className: "md:col-span-1",
       thumbnail: "/images/project3.jpg",
       title: "Flat Body",
     },
@@ -305,7 +305,7 @@ function OurWorks() {
         Our Special Projects
       </h4>
 
-      <div className="h-screen">
+      <div className="h-screen max-h-[1080px]">
         <LayoutGrid cards={projects} />
       </div>
     </section>
@@ -314,9 +314,10 @@ function OurWorks() {
 
 function Location() {
   return (
-    <section className="py-[clamp(2rem,2.414vw+1.442rem,3.75rem)] mx-auto max-w-[1900px]">
+    <section className="py-[clamp(2rem,2.414vw+1.442rem,3.75rem)] mx-auto max-w-[1980px]">
       <div className="relative">
         <iframe
+          title="Company address on google map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.4479614234947!2d3.960497759591075!3d7.415572293806846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1039933161bf7983%3A0xbef1f39669a64d13!2sAllah&#39;s%20Will%20Steel%20Construction%20Nig.%20Ltd!5e0!3m2!1sen!2sng!4v1726408169614!5m2!1sen!2sng"
           width="600"
           height="500"
@@ -423,7 +424,7 @@ function Testimonials() {
           className="hidden lg:block"
         />
 
-        <div className="mt-10 lg:mt-0 col-center lg:block">
+        <div className="mt-10 lg:mt-0 col-center lg:block max-w-[646px]">
           <div className="h-[350px] lg:h-[400px]">
             <Carousel leftControl=" " rightControl=" " theme={customTheme}>
               <Testimonial
@@ -451,7 +452,7 @@ function Testimonials() {
 
 export default function Home() {
   return (
-    <main className="bg-dot-black/[0.2]">
+    <main>
       <HeroSection />
       <Infrastructures />
       <AboutUs />

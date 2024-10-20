@@ -30,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("antialiased", kanit.variable, lato.variable)}>
+      <body className={cn("antialiased bg-dot-black/[0.2]", kanit.variable, lato.variable)}>
         <div className="relative w-full flex items-center justify-center">
-          <Navbar className="top-2" />
+          <Navbar className="top-2 md:top-3 lg:top-4 2xl:top-5" />
         </div>
         {children}
         <Footer />

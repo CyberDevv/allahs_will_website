@@ -51,7 +51,7 @@ const Footer = () => {
                 <Links href="#" label="Contacts" />
               </ul>
             </div>
-            <div>
+            <div className="col-span-2 md:col-span-1">
               <h2 className="mb-[clamp(1rem,0.69vw+0.841rem,1.5rem)] font-kanit text-[clamp(1.063rem,0.469vw+0.953rem,1.375rem)] leading-[clamp(1.063rem,0.469vw+0.953rem,1.375rem)] text-white">
                 Address
               </h2>

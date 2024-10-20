@@ -4,11 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Sling as Hamburger } from "hamburger-react";
-import {
-  HoveredLink,
-  Menu,
-} from "@/components/ui/navbar-menu";
+import { HoveredLink, Menu } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 const NavLink = ({ label }: { label: string }) => {
   return (
@@ -24,53 +22,74 @@ const Navbar = ({ className }: { className?: string }) => {
 
   return (
     <div
-      className={cn("fixed top-10 inset-x-0 max-w-4xl mx-auto z-50", className)}
+      className={cn(
+        "fixed top-10 inset-x-0 md:w-fit mx-4 md:mx-auto z-50",
+        className
+      )}
     >
-      <Menu setActive={setActive}>
-        <HoveredLink href="/about">About</HoveredLink>
-        <HoveredLink href="/services">Services</HoveredLink>
+      <Menu
+        setActive={setActive}
+        className="px-7 py-1 md:px-10 md:py-2 rounded-2xl md:rounded-2xl transition-all"
+      >
+        <div className="hidden md:block md:center md:space-x-10 2xl:space-x-14">
+          <HoveredLink href="/about">About</HoveredLink>
+          <HoveredLink href="/services">Services</HoveredLink>
 
-        <Image
-          src="/images/logo.png"
-          width={988}
-          height={642}
-          alt="Logo"
-          className="w-24"
-        />
-
-        <HoveredLink href="/portfolio">Portfolio</HoveredLink>
-        <HoveredLink href="/contact">Contact</HoveredLink>
-        {/* <nav
-          className="container_fluid py-[clamp(1rem,1.724vw+0.601rem,2.25rem)] px-4 font-kanit relative"
-          id="outer-container"
-        >
-          <div className="hidden lg:block lg:center space-x-16">
-            <NavLink label="About" />
-            <NavLink label="Services" />
-        
+          <Link href="/">
             <Image
               src="/images/logo.png"
               width={988}
               height={642}
               alt="Logo"
-              className="w-24"
+              className="w-20 2xl:w-28"
             />
-        
-            <NavLink label="Portfolio" />
-            <NavLink label="Contact" />
-          </div>
-        
-          <div className="lg:hidden between">
-            <Image
-              src="/images/logo.png"
-              width={988}
-              height={642}
-              alt="Logo"
-              className="w-20"
+          </Link>
+
+          <HoveredLink href="/portfolio">Portfolio</HoveredLink>
+          <HoveredLink href="/contact">Contact</HoveredLink>
+        </div>
+
+{/* Mobile nav */}
+        <div className="md:hidden">
+          <div className=" between">
+            <Link href="/">
+              <Image
+                src="/images/logo.png"
+                width={988}
+                height={642}
+                alt="Logo"
+                className="w-16"
+              />
+            </Link>
+
+            <Hamburger
+              toggled={isOpen}
+              toggle={setOpen}
+              direction="right"
+              size={16}
             />
-            <Hamburger toggled={isOpen} toggle={setOpen} direction="right" />
           </div>
-        </nav> */}
+
+          {
+            <div
+              className={` transition-['height'] duration-500 overflow-hidden ${
+                isOpen ? "h-[340px] pb-4" : "h-0"
+              }`}
+            >
+              <div className={`col-start space-y-6 mt-10 ${
+                isOpen ? "opacity-100" : "opacity-0"
+              }`}>
+                <HoveredLink href="/about">About</HoveredLink>
+                <HoveredLink href="/services">Services</HoveredLink>
+                <HoveredLink href="/portfolio">Portfolio</HoveredLink>
+                <HoveredLink href="/contact">Contact</HoveredLink>
+              </div>
+
+              <hr className="mt-8 border-gray-300" />
+               <p className="mt-4 ">Building ...</p>
+            </div>
+          }
+        </div>
       </Menu>
     </div>
   );

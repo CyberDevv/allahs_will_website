@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
-import { Inter, Kanit, Lato } from "next/font/google";
-import "./globals.css";
+import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import { cn } from "@/lib/utils";
-import Footer from "@/components/layout/Footer";
+import { ReactLenis } from "lenis/react";
+import type { Metadata } from "next";
+import { Kanit, Lato } from "next/font/google";
+import "./globals.css";
 
 import React from "react";
 
@@ -30,12 +31,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("antialiased bg-dot-black/[0.2]", kanit.variable, lato.variable)}>
-        <div className="relative w-full flex items-center justify-center">
-          <Navbar className="top-2 md:top-3 lg:top-4 2xl:top-5" />
-        </div>
-        {children}
-        <Footer />
+      <body
+        className={cn(
+          "antialiased bg-dot-black/[0.2]",
+          kanit.variable,
+          lato.variable
+        )}
+      >
+        <ReactLenis root>
+          <div className="relative w-full flex items-center justify-center">
+            <Navbar className="top-2 md:top-3 lg:top-4 2xl:top-5" />
+          </div>
+          {children}
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );

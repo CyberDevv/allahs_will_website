@@ -17,6 +17,7 @@
     "flowbite-react": "^0.10.1",
     "framer-motion": "^11.5.5",
     "hamburger-react": "^2.5.1",
+    "lenis": "^1.1.14",
     "lucide-react": "^0.418.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.5",

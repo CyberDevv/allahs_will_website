@@ -57,7 +57,7 @@ const Infrastructures = () => {
         <div className="bg-[#001ED3] h-[clamp(0.313rem,0.206vw+0.265rem,0.45rem)]" />
         <div className="px-[clamp(2rem,2.414vw+1.442rem,3.75rem)] py-20 xl:py-[30px] max-w-md md:max-w-lg mx-auto lg:max-w-none">
           <h6 className="text-primary font-kanit font-medium text-[clamp(1.625rem,0.751vw+1.449rem,2.125rem)] leading-[38px] text-center xl:text-left lg:w-1/2 mx-auto xl:w-full">
-            We Construct and Manage Places and ss
+            We Construct and Manage Places and Infrastructures
           </h6>
           <div className="mt-10 space-y-8 xl:space-y-5 lg:grid lg:grid-cols-3 lg:space-y-0 lg:space-x-4 xl:space-x-0 xl:block">
             <Infrastructure

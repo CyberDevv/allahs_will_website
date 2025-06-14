@@ -78,7 +78,7 @@ const OurWorks = () => {
           Our Works
         </h6>
         <h4 className="text-primary font-kanit font-semibold text-[clamp(2rem,1.983vw+1.541rem,3.438rem)] leading-tight xl:leading-[64px] mt-1 xl:mt-2.5 text-center">
-          Our Special Projects
+          Our Featured Projects
         </h4>
   
         <div className="h-screen max-h-[1080px]">

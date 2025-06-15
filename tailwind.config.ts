@@ -2,19 +2,23 @@ import flowbite from "flowbite-react/tailwind";
 import svgToDataUri from "mini-svg-data-uri";
 import type { Config } from "tailwindcss";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
-
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    flowbite.content(),
-  ],
+  content: {
+    files: [
+      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./app/**/*.{js,ts,jsx,tsx,mdx}",
+      flowbite.content(),
+    ],
+    extract,
+  },
   prefix: "",
   theme: {
+    screens,
+    fontSize,
     container: {
       center: true,
       padding: "2rem",
@@ -80,13 +84,11 @@ const config = {
             backgroundPosition: "350% 50%, 350% 50%",
           },
         },
-
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         aurora: "aurora 60s linear infinite",
-
       },
       backgroundImage: {
         hero_image: "url('/images/hero_image.png')",
@@ -98,6 +100,9 @@ const config = {
     },
   },
   plugins: [
+    fluid({
+      checkSC144: false,
+    }),
     addVariablesForColors,
     require("tailwindcss-animate"),
     flowbite.plugin(),
@@ -139,4 +144,3 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 export default config;
-

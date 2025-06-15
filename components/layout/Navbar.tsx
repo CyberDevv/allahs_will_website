@@ -6,15 +6,6 @@ import React from "react";
 import { Sling as Hamburger } from "hamburger-react";
 import { HoveredLink, Menu } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-
-const NavLink = ({ label }: { label: string }) => {
-  return (
-    <Link href={`/${label.toLowerCase()}`} className="text-lg text-primary">
-      {label}
-    </Link>
-  );
-};
 
 const Navbar = ({ className }: { className?: string }) => {
   const [isOpen, setOpen] = React.useState(false);
@@ -23,15 +14,15 @@ const Navbar = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 md:w-fit mx-4 md:mx-auto z-50",
+        "fixed top-10 inset-x-0 md:w-fit md:mx-auto z-50",
         className
       )}
     >
       <Menu
         setActive={setActive}
-        className="px-7 py-1 md:px-10 md:py-2 rounded-2xl md:rounded-2xl transition-all"
+        className="~px-7/10 ~py-1/2 rounded-2xl transition-all"
       >
-        <div className="hidden md:block md:center md:space-x-10 2xl:space-x-14">
+        <div className="hidden md:block md:center ~md:~space-x-10/14">
           <HoveredLink href="/about">About</HoveredLink>
           <HoveredLink href="/services">Services</HoveredLink>
 
@@ -41,7 +32,7 @@ const Navbar = ({ className }: { className?: string }) => {
               width={988}
               height={642}
               alt="Logo"
-              className="w-20 2xl:w-28"
+              className="~w-20/28"
             />
           </Link>
 
@@ -49,7 +40,7 @@ const Navbar = ({ className }: { className?: string }) => {
           <HoveredLink href="/contact">Contact</HoveredLink>
         </div>
 
-{/* Mobile nav */}
+        {/* Mobile nav */}
         <div className="md:hidden">
           <div className=" between">
             <Link href="/">
@@ -76,9 +67,11 @@ const Navbar = ({ className }: { className?: string }) => {
                 isOpen ? "h-[340px] pb-4" : "h-0"
               }`}
             >
-              <div className={`col-start space-y-6 mt-10 ${
-                isOpen ? "opacity-100" : "opacity-0"
-              }`}>
+              <div
+                className={`col-start space-y-6 mt-10 ${
+                  isOpen ? "opacity-100" : "opacity-0"
+                }`}
+              >
                 <HoveredLink href="/about">About</HoveredLink>
                 <HoveredLink href="/services">Services</HoveredLink>
                 <HoveredLink href="/portfolio">Portfolio</HoveredLink>
@@ -86,7 +79,7 @@ const Navbar = ({ className }: { className?: string }) => {
               </div>
 
               <hr className="mt-8 border-gray-300" />
-               <p className="mt-4 ">Building ...</p>
+              <p className="mt-4 ">Building ...</p>
             </div>
           }
         </div>

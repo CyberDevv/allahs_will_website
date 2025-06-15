@@ -85,7 +85,7 @@ export const Menu = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link {...rest} className="text-neutral-700 hover:text-black text-[28px] leading-[32px] tracking-[-.02em] md:text-base md:leading-[22px] 2xl:text-2xl font-medium">
+    <Link {...rest} className="text-neutral-700 hover:text-black text-[28px] leading-[32px] tracking-[-.02em] ~md:~text-base/2xl md:leading-[22px] font-medium">
       {children}
     </Link>
   );

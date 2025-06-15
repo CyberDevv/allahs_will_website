@@ -7,27 +7,31 @@ export function FeaturesSectionDemo({
   label,
   desc,
   isOdd,
-  image
+  image,
 }: {
   label: string;
   desc: string;
   isOdd?: boolean;
-  image?: string
+  image?: string;
 }) {
   return (
-    <div className={`bg-[url('/images/${image || "service1"}.png')] bg-cover col-span-2 xl:col-span-1 overflow-hidden`}>
+    <div
+      className={`bg-[url('/images/${
+        image || "service1"
+      }.png')] bg-cover col-span-2 xl:col-span-1 overflow-hidden`}
+    >
       <div
         className={`${
           isOdd
             ? "from-secondary/80 to-secondary"
             : "from-primary/80 to-primary "
-        }  h-full w-full px-[clamp(1.875rem,0.939vw+1.655rem,2.5rem)] py-[clamp(2.5rem,0.939vw+2.28rem,3.125rem)] text-primary-foreground flex flex-col relative bg-gradient-to-b`}
+        }  h-full w-full ~px-[1.875rem]/[2.5rem] ~py-[2.5rem]/[3.125rem] text-primary-foreground flex flex-col relative bg-gradient-to-b`}
       >
         <Grid size={20} />
-        <h3 className="font-kanit font-semibold text-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)] 2xl:text-4xl">
+        <h3 className="font-kanit font-semibold ~text-[1.5rem]/[1.875rem] 2xl:text-4xl">
           {label}
         </h3>
-        <p className="font-lato font-medium leading-[28px] text-[clamp(0.75rem,0.172vw+0.71rem,0.875rem)] 2xl:text-base text-[#D4D7DD] mt-[clamp(1.5rem,0.563vw+1.368rem,1.875rem)]">
+        <p className="font-lato font-medium leading-[28px] ~text-[0.75rem]/[0.875rem] 2xl:text-base text-[#D4D7DD] ~mt-[1.5rem]/[1.875rem]">
           {desc}
         </p>
 

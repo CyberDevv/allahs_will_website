@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FooterBackground } from "../ui/FooterBackground";
+import { phoneNumber } from "@/data/contact";
 
 const Footer = () => {
   const Links = ({ href, label }: { href: string; label: string }) => (
@@ -62,8 +63,8 @@ const Footer = () => {
                   Ibadan
                 </li>
                 <li>
-                  <a href="tel:+2348034552211" className="hover:underline">
-                    +234 8034552211
+                  <a href={`tel:${phoneNumber}`} className="hover:underline">
+                    {phoneNumber}
                   </a>
                 </li>
               </ul>

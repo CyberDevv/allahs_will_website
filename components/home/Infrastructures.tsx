@@ -1,7 +1,9 @@
-import Image from 'next/image';
-import React from 'react'
+import { infrastructures } from "@/data/infrastructure";
+import { noOfProjects, yearsOfExperience } from "@/data/misc";
+import Image from "next/image";
+import React from "react";
 
-const Infrastructure = ({
+export const Infrastructure = ({
   svg,
   label,
   desc,
@@ -38,7 +40,7 @@ const Infrastructures = () => {
       <div className="grid grid-cols-2 xl:start">
         <div className="bg-primary text-primary-foreground px-10 ~py-[2rem]/[3.75rem] ~space-y-[0rem]/[0.625rem] w-full xl:w-fit col-center xl:col-start">
           <p className="font-kanit font-bold ~text-[4.375rem]/[6.25rem] xl:leading-[84px]">
-            245
+            {noOfProjects}
           </p>
           <p className="font-kanit ~text-[1.063rem]/[1.375rem] ~leading-[1.063rem]/[1.375rem] text-[#EBECEE]">
             Completed Projects
@@ -46,7 +48,7 @@ const Infrastructures = () => {
         </div>
         <div className="bg-secondary text-secondary-foreground px-10 ~py-[2rem]/[3.75rem] ~space-y-[0rem]/[0.625rem] w-full xl:w-fit col-center xl:col-start">
           <p className="font-kanit font-bold ~text-[4.375rem]/[6.25rem] xl:leading-[84px]">
-            25+
+            {yearsOfExperience}
           </p>
           <p className="font-kanit ~text-[1.063rem]/[1.375rem] ~leading-[1.063rem]/[1.375rem] text-[#EBECEE]">
             Years of Experience
@@ -60,29 +62,19 @@ const Infrastructures = () => {
             We Construct and Manage Places and Infrastructures
           </h6>
           <div className="mt-10 space-y-8 xl:space-y-5 lg:grid lg:grid-cols-3 lg:space-y-0 lg:space-x-4 xl:space-x-0 xl:block">
-            <Infrastructure
-              svg="general"
-              label="General Contact"
-              desc="Quisque condimentum erat ac orci blandit, in sollicitudin
-                    tellus vestibulum"
-            />
-            <Infrastructure
-              svg="ruler"
-              label="Project Planning "
-              desc="Quisque condimentum erat ac orci blandit, in sollicitudin
-                  tellus vestibulum"
-            />
-            <Infrastructure
-              svg="measuring-tool"
-              label="Refurbishment"
-              desc="Quisque condimentum erat ac orci blandit, in sollicitudin
-                tellus vestibulum"
-            />
+            {infrastructures?.map((item, idx) => (
+              <Infrastructure
+                key={idx}
+                svg={item?.svg}
+                label={item?.label}
+                desc={item?.desc}
+              />
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
-export default Infrastructures
+export default Infrastructures;

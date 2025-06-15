@@ -14,7 +14,7 @@ const Navbar = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 md:w-fit md:mx-auto z-50",
+        "fixed top-10 inset-x-0 md:w-fit mx-6 md:mx-auto z-50",
         className
       )}
     >

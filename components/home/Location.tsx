@@ -1,3 +1,4 @@
+import { address, email, phoneNumber } from "@/data/contact";
 import Image from "next/image";
 import React from "react";
 
@@ -26,8 +27,7 @@ const Location = () => {
               Company Address
             </h6>
             <p className="font-medium font-kanit ~text-[1rem]/[1.75rem] ~leading-[1.25rem]/[2rem] text-center xl:text-left mt-[10px]">
-              P. O Box 8093, Klm 127 - 500, Ibadan - Lagos Expressway, Ogunpa
-              Channelization, Adjacent Soka Bus Stop, Mapo Hill, Ibadan
+              {address}
             </p>
           </div>
         </div>
@@ -40,10 +40,10 @@ const Location = () => {
                 Company Phones
               </h6>
               <p className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left mt-[10px]">
-                +234 8034552211
+                {phoneNumber}
               </p>
               <p className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left mt-[5px]">
-                +234 8034552211
+                {phoneNumber}
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ const Location = () => {
                 Email
               </h6>
               <p className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left mt-[10px]">
-                awsc@gmail.com
+                {email}
               </p>
             </div>
           </div>

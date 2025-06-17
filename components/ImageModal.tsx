@@ -42,7 +42,7 @@ export function ImageModal({ src, label }: ImageModalProps) {
                 width={320}
                 height={450}
                 alt="image"
-                className="w-full min-h-[800ox] h-[80vh] object-cover"
+                className="w-full h-[80vh] object-cover"
               />
               <h2 className="text-xl mt-5 font-kanit font-medium tracking-wider">{label}</h2>
             </div>

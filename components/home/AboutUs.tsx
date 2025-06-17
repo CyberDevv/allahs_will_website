@@ -36,7 +36,7 @@ const AboutUs = () => {
           </div>
 
           <Image
-            className="w-full rounded-2xl max-h-[400px] object-cover"
+            className="w-full rounded-2xl max-h-[400px] object-cover "
             src="/images/about.png"
             width={500}
             height={600}

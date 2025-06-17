@@ -2,35 +2,55 @@ import { infrastructures } from "@/data/infrastructure";
 import { noOfProjects, yearsOfExperience } from "@/data/misc";
 import Image from "next/image";
 import React from "react";
+import SpotlightCard from "../ui/spotlightCard";
 
 export const Infrastructure = ({
   svg,
   label,
   desc,
+  isSpotLight,
 }: {
   svg: string;
   label: string;
   desc: string;
+  isSpotLight?: boolean;
 }) => {
-  return (
-    <div className="col-center xl:flex-row xl:start xl:space-x-5 space-y-5 xl:space-y-0">
-      <Image
-        src={`/svg/${svg}.svg`}
-        className="ml-[5px]"
-        width={61}
-        height={63.82}
-        alt={label}
-      />
+  const Comp = () => {
+    return (
+      <div className="col-center xl:flex-row xl:start xl:space-x-5 space-y-5 xl:space-y-0">
+        <Image
+          src={`/svg/${svg}.svg`}
+          className="ml-[5px]"
+          width={61}
+          height={63.82}
+          alt={label}
+        />
 
-      <div>
-        <h6 className="text-primary font-kanit font-medium leading-[26.91px] ~text-[1rem]/[1.125rem] text-center xl:text-left">
-          {label}
-        </h6>
-        <p className="~mt-[0.25rem]/[0.375rem] font-lato ~text-[0.938rem]/[1.063rem] leading-[28px] text-center xl:text-left">
-          {desc}
-        </p>
+        <div>
+          <h6 className="text-primary font-kanit font-medium leading-[26.91px] ~text-[1rem]/[1.125rem] text-center xl:text-left">
+            {label}
+          </h6>
+          <p className="~mt-[0.25rem]/[0.375rem] font-lato ~text-[0.938rem]/[1.063rem] leading-[28px] text-center xl:text-left">
+            {desc}
+          </p>
+        </div>
       </div>
-    </div>
+    );
+  };
+
+  return (
+    <>
+      {isSpotLight ? (
+        <SpotlightCard
+          className="custom-spotlight-card"
+          spotlightColor="rgba(0, 33, 91, 0.2)"
+        >
+          <Comp />
+        </SpotlightCard>
+      ) : (
+        <Comp />
+      )}
+    </>
   );
 };
 

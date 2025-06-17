@@ -3,19 +3,6 @@ import { Button } from "../ui/button";
 import { FocusCards } from "../ui/focus-cards";
 
 const OurWorks = () => {
-  const ProjectDesc = ({ title, desc }: { title: string; desc: string }) => {
-    return (
-      <div>
-        <p className="font-bold md:text-4xl text-lg text-white">{title}</p>
-        <p className="font-normal text-base text-white"></p>
-        <p className="font-normal text-sm md:text-base my-4 max-w-lg text-neutral-200">
-          {desc}
-        </p>
-
-        <Button className="text-sm md:text-base">Check it out</Button>
-      </div>
-    );
-  };
 
   const projects = [
     {

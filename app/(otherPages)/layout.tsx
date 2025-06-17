@@ -55,14 +55,14 @@ export default function Layout({
         </div>
       </div>
       <div className="end container_fluid">
-        <div className="bg-white text-primary w-full xl:max-w-[500px] xl:shadow-2xl xl:-mt-14 relative">
+        <div className="bg-white text-primary w-full lg:~lg:~max-w-[21.875rem]/[28.125rem] shadow-xl xl:shadow-2xl ~-mt-8/14 relative max-w-sm mx-auto lg:mx-0">
           <div className="bg-secondary ~h-[0.313rem]/[0.45rem]" />
-          <div className="~px-[2rem]/[3.75rem] py-20 xl:py-[30px] ~max-w-md/lg mx-auto lg:max-w-none">
-            <p className="uppercase text-sm font-kanit text-black">
+          <div className="~px-[2rem]/[3.75rem] ~py-[1.25rem]/[1.875rem] ~max-w-md/lg mx-auto lg:max-w-none">
+            <p className="uppercase text-sm font-kanit text-black text-center lg:text-left">
               Call us today
             </p>
             <a href={`tel:${phoneNumber}`} className="hover:underline">
-              <h6 className="text-primary font-kanit font-medium ~text-[1.625rem]/[2.125rem] leading-[38px] text-center xl:text-left lg:w-1/2 mx-auto xl:w-full">
+              <h6 className="text-primary font-kanit font-medium ~text-[1.625rem]/[2.125rem] leading-[38px] text-center lg:text-left mx-auto lg:w-full">
                 {phoneNumber}
               </h6>
             </a>

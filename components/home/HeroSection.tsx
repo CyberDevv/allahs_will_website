@@ -5,8 +5,8 @@ const HeroSection = () => {
   return (
     <>
       <section className="bg-hero_image bg-cover bg-no-repeat">
-        <div className="bg-black h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-screen xl:max-h-[1080px] bg-opacity-40">
-          <div className="relative flex flex-col  h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-screen xl:max-h-[1080px] items-center justify-center">
+        <div className="bg-black h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-screen max-h-[1080px] bg-opacity-40">
+          <div className="relative flex flex-col  h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-screen max-h-[1080px] items-center justify-center">
             <div className="relative flex flex-col gap-4 items-center justify-center px-4 col-start">
               <div className="container_fluid">
                 <div className="xl:w-[65%] col-center xl:block">

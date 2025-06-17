@@ -20,14 +20,16 @@ export const Card = React.memo(
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
     className: string;
   }) => (
-    <Link href={`/portfolio/${card.title.toLowerCase().replaceAll(" ", "_")}`}>
+    <Link
+      href={`/portfolio/${card.title.toLowerCase().replaceAll(" ", "_")}`}
+      className={className}
+    >
       <div
         onMouseEnter={() => setHovered(index)}
         onMouseLeave={() => setHovered(null)}
         className={cn(
           "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden ~min-h-[15rem]/[20rem] h-full w-full transition-all duration-300 ease-out",
-          hovered !== null && hovered !== index && "blur-sm scale-[0.98]",
-          className
+          hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
         )}
       >
         <Image

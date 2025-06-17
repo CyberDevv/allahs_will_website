@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react'
 import { FeaturesSectionDemo } from '../ui/ServicesPlate';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const AboutUs = () => {
     return (
@@ -12,31 +13,38 @@ const AboutUs = () => {
               About us
             </h6>
             <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] ~mt-1/2.5 text-center xl:text-start">
-              With our knowledge we guarente success
+              With our knowledge we Guarantee Success
             </h4>
             <p className="font-lato text-[#41444B] ~text-[0.938rem]/[1.063rem] leading-normal xl:leading-[28px] ~mt-[1.25rem]/[1.875rem] text-center xl:text-start">
-              Cras tincidunt tellus at mi tristique rhoncus. Etiam dapibus
-              rutrum leo consectetur accumsan. Vivamus viverra ante turpis,
-              dignissim condimentum elit egestas sit amet. Phasellus faucibus
-              pellentesque
+              Allah&apos;s Will Steel Construction (Nig.) Ltd. is a premier
+              construction company with over 25 years of excellence in
+              delivering innovative and high-quality projects across Nigeria,
+              including Abuja, Lagos, Benin, Oyo, and Kano. Specializing in oil
+              and gas, industrial, mission-critical, and retail construction, we
+              combine expertise, safety, and sustainability to meet your needs.
+              Our commitment to cutting-edge techniques, community care, and
+              unwavering quality ensures success in every project we undertake.
+              Trust us to build your vision with precision and reliability.
             </p>
-            <Button
-              variant="secondary"
-              className="py-5 px-16 h-auto ~mt-[1.875rem]/[3.125rem]"
-            >
-              Learn more
-              <Image
-                src="/svg/arrow-right.svg"
-                className="ml-[5px]"
-                width={13}
-                height={14}
-                alt="arrow-right"
-              />
-            </Button>
+            <Link href="/about">
+              <Button
+                variant="secondary"
+                className="py-5 px-16 h-auto ~mt-[1.875rem]/[3.125rem]"
+              >
+                Learn more
+                <Image
+                  src="/svg/arrow-right.svg"
+                  className="ml-[5px]"
+                  width={13}
+                  height={14}
+                  alt="arrow-right"
+                />
+              </Button>
+            </Link>
           </div>
 
           <Image
-            className="w-full rounded-2xl max-h-[400px] object-cover "
+            className="w-full rounded-2xl max-h-[500px] lg:max-h-[500px] object-cover"
             src="/images/about.png"
             width={500}
             height={600}

@@ -40,7 +40,7 @@ export default function ImageGallery({
                   onClick={() => openModal(idx)}
                 >
                   <Image
-                    src={`/images/${projectType}/${img}`}
+                    src={`/images/projects/${projectType}/${img}`}
                     alt={img}
                     fill
                     className="object-cover"
@@ -67,7 +67,7 @@ export default function ImageGallery({
               </button>
               <div className="relative w-[95vw] max-w-5xl aspect-[4/3] rounded overflow-hidden flex items-center justify-center bg-black">
                 <Image
-                  src={`/images/${projectType}/${images[currentIdx]}`}
+                  src={`/images/projects/${projectType}/${images[currentIdx]}`}
                   alt={images[currentIdx]}
                   fill
                   className="object-cover "

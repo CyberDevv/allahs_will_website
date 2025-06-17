@@ -1,9 +1,10 @@
 import React from "react";
-import { Button } from "../ui/button";
 import { FocusCards } from "../ui/focus-cards";
-import { projects } from "@/data/projects";
+import { getProjects } from "@/data/projects";
 
-const OurWorks = () => {
+const OurWorks = async () => {
+  const projects = await getProjects();
+
   return (
     <section className="container_fluid ~py-[5rem]/[12.5rem]">
       <h6 className="font-kanit uppercase font-medium ~text-[0.75rem]/[0.875rem] leading-[15px] text-secondary text-center">

@@ -7,6 +7,7 @@ export default function Page({ params }: { params: { projectType: string } }) {
     process.cwd(),
     "public",
     "images",
+    "projects",
     params.projectType
   );
 

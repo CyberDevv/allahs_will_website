@@ -3,6 +3,7 @@
 import { phoneNumber } from "@/data/contact";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import React from "react";
 
 const pageInfo: Record<
@@ -13,6 +14,11 @@ const pageInfo: Record<
     title: "About Us",
     caption: "Learn more about us and our services",
     image: "/images/hero_about.png",
+  },
+  "/portfolio": {
+    title: "Portfolio Archive",
+    caption: "Learn more about us and our services",
+    image: "/images/hero_portfolio.png",
   },
   "/contact": {
     title: "Contacts",
@@ -28,10 +34,41 @@ export default function Layout({
 }>) {
   const pathname = usePathname();
 
-  const { title, caption, image } = pageInfo[pathname] || {
-    title: "Page",
-    caption: "",
-  };
+  let { title, caption, image } = pageInfo[pathname] || {};
+  let breadcrumb: React.ReactNode = null;
+
+  if (!title) {
+    const segments = pathname.split("/").filter(Boolean);
+    const lastSegment = segments[segments.length - 1] || "Page";
+    title = lastSegment
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (l) => l.toUpperCase());
+
+    let path = "";
+    breadcrumb = segments.map((seg, idx) => {
+      path += "/" + seg;
+      const label = seg
+        .replace(/_/g, " ")
+        .replace(/\b\w/g, (l) => l.toUpperCase());
+      const isLast = idx === segments.length - 1;
+      return (
+        <span key={path}>
+          {!isLast ? (
+            <>
+              <Link href={path} className="hover:underline text-[#EBECEE]">
+                {label}
+              </Link>
+              <span className="mx-1 text-[#EBECEE]">/</span>
+            </>
+          ) : (
+            <span className="text-[#EBECEE]">{label}</span>
+          )}
+        </span>
+      );
+    });
+
+    image = `/images/hero_${segments[1]}.png`;
+  }
 
   return (
     <main>
@@ -43,13 +80,13 @@ export default function Layout({
           alt="bg-image"
           className="object-cover w-full ~min-h-[15.625rem]/[25rem] ~max-h-[15.625rem]/[25rem]"
         />
-        <div className="bg-black/20 size-full inset-0 absolute text-white start">
+        <div className="bg-black/40 size-full inset-0 absolute text-white start">
           <div className="container_fluid ~mt-10/20">
             <h2 className="xl:leading-[64px] ~text-[1.875rem]/[3.4375rem] text-white text-center xl:text-left font-kanit font-semibold">
               {title}
             </h2>
-            <p className="~text-[0.75rem]/[1.0625rem] leading-[28px] text-[#EBECEE] ~mt-[0rem]/[1rem] xl:text-left text-center">
-              {caption}
+            <p className="~text-[0.75rem]/[1.0625rem] leading-[28px] ~mt-[0rem]/[1rem] xl:text-left text-center">
+              {breadcrumb ? breadcrumb : caption}
             </p>
           </div>
         </div>

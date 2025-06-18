@@ -38,9 +38,10 @@ const Footer = () => {
                 Quick Links
               </h2>
               <ul className="font-lato text-[#D4D7DD] ~text-[0.938rem]/[1.063rem] leading-[28px] space-y-1.5">
-                <Links href="#" label="About Company" />
-                <Links href="#" label="Our Services" />
-                <Links href="#" label="Our Projects" />
+                <Links href="/about" label="About Company" />
+                <Links href="/services" label="Our Services" />
+                <Links href="/portfolio" label="Our Projects" />
+                <Links href="/hse-policy" label="HSE Policy" />
               </ul>
             </div>
             <div>
@@ -48,8 +49,8 @@ const Footer = () => {
                 Clients Support
               </h2>
               <ul className="font-lato text-[#D4D7DD] ~text-[0.938rem]/[1.063rem] leading-[28px]">
-                <Links href="#" label="Clients Testimonials" />
-                <Links href="#" label="Contacts" />
+                <Links href="/#testimonials" label="Clients Testimonials" />
+                <Links href="/contacts" label="Contacts" />
               </ul>
             </div>
             <div className="col-span-2 md:col-span-1">

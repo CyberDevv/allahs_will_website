@@ -25,6 +25,11 @@ const pageInfo: Record<
     caption: "Get in touch with us",
     image: "/images/hero_contact.png",
   },
+  "/hse-policy": {
+    title: "HSE Policy",
+    caption: "Get in touch with us",
+    image: "/images/hero_hse-policy.png",
+  },
 };
 
 export default function Layout({

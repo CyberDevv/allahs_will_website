@@ -72,7 +72,15 @@ export function FocusCards({
 }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
-  const displayCards = isFeatured ? cards.slice(0, 5) : cards;
+  const sortedCards = [...cards].sort((a, b) =>
+    a.title.toLowerCase() === "tanker"
+      ? -1
+      : b.title.toLowerCase() === "tanker"
+      ? 1
+      : 0
+  );
+
+  const displayCards = isFeatured ? sortedCards.slice(0, 5) : sortedCards;
 
   return (
     <div

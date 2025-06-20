@@ -17,7 +17,7 @@ const pageInfo: Record<
   },
   "/portfolio": {
     title: "Portfolio Archive",
-    caption: "Learn more about us and our services",
+    caption: "Explore our completed projects and see the quality of our work",
     image: "/images/hero_portfolio.png",
   },
   "/contact": {
@@ -27,8 +27,14 @@ const pageInfo: Record<
   },
   "/hse-policy": {
     title: "HSE Policy",
-    caption: "Get in touch with us",
+    caption: "Discover our commitment to health, safety, and the environment",
     image: "/images/hero_hse-policy.png",
+  },
+  "/quality-policy": {
+    title: "Quality Policy",
+    caption:
+      "Learn about our standards and dedication to delivering excellence",
+    image: "/images/hero_quality-policy.png",
   },
 };
 

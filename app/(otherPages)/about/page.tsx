@@ -64,7 +64,7 @@ const Page = () => {
               an opportunity to serve build-up of your needs in the near future.
             </p>
 
-            <div className="~mt-5/10 font-medium font-kanit ~text-base/xl">
+            <div className="~mt-5/10 font-medium font-kanit ~text-base/xl text-center lg:text-start">
               <h4>
                 DR. M.A. ODESOLA <sub>(J.P., G.P.P)</sub>
               </h4>

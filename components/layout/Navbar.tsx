@@ -25,6 +25,7 @@ const Navbar = ({ className }: { className?: string }) => {
         <div className="hidden md:block md:center ~md:~space-x-10/14">
           <HoveredLink href="/about">About</HoveredLink>
           <HoveredLink href="/services">Services</HoveredLink>
+          <HoveredLink href="/portfolio">Portfolio</HoveredLink>
 
           <Link href="/">
             <Image
@@ -36,7 +37,8 @@ const Navbar = ({ className }: { className?: string }) => {
             />
           </Link>
 
-          <HoveredLink href="/portfolio">Portfolio</HoveredLink>
+          <HoveredLink href="/quality-policy">Qualiy Policy</HoveredLink>
+          <HoveredLink href="/hse-policy">HSE Policy</HoveredLink>
           <HoveredLink href="/contact">Contact</HoveredLink>
         </div>
 
@@ -75,11 +77,10 @@ const Navbar = ({ className }: { className?: string }) => {
                 <HoveredLink href="/about">About</HoveredLink>
                 <HoveredLink href="/services">Services</HoveredLink>
                 <HoveredLink href="/portfolio">Portfolio</HoveredLink>
+                <HoveredLink href="/quality-policy">Qualiy Policy</HoveredLink>
+                <HoveredLink href="/hse-policy">HSE Policy</HoveredLink>
                 <HoveredLink href="/contact">Contact</HoveredLink>
               </div>
-
-              <hr className="mt-8 border-gray-300" />
-              <p className="mt-4 ">Building ...</p>
             </div>
           }
         </div>

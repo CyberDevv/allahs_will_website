@@ -26,7 +26,7 @@ const InputLabel: React.FC<InputLabelProps> = ({
   type = "text",
 }) => {
   return (
-    <div className={`grid w-full max-w-sm items-center gap-3 ${className}`}>
+    <div className={`grid w-full items-center gap-3 ${className}`}>
       <Label
         className="font-lato text-[#41444B] ~text-[0.938rem]/[1.063rem] leading-normal xl:leading-[28px] font-medium"
         htmlFor={label}
@@ -84,7 +84,7 @@ const Page = () => {
             label="Message"
             value={message}
             setValue={setMessage}
-            className="lg:col-span-2 w-full max-w-none"
+            className="lg:col-span-2 w-full"
             isTextArea
           />
           <Button

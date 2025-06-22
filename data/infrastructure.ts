@@ -1,17 +1,17 @@
 export const infrastructures = [
   {
-    label: "General Contact",
-    desc: "Quisque condimentum erat ac orci blandit, in sollicitudin tellus vestibulum",
+    label: "General Contract",
+    desc: "End-to-end steel construction for industrial, commercial, and energy projects.",
     svg: "general",
   },
   {
     label: "Project Planning",
-    desc: "Quisque condimentum erat ac orci blandit, in sollicitudin tellus vestibulum",
+    desc: "Precision steel design and execution plans",
     svg: "ruler",
   },
   {
     label: "Refurbishment",
-    desc: "Quisque condimentum erat ac orci blandit, in sollicitudin tellus vestibulum",
+    desc: "Upgrading steel structures for modern demands",
     svg: "measuring-tool",
   },
 ];

@@ -11,7 +11,7 @@ const HeroSection = () => {
           <div className="relative flex flex-col  h-[calc(100vh-84.13px)] min-[700px]:h-[calc(100vh-335px)] lg:h-screen max-h-[1080px] items-center justify-center">
             <div className="relative flex flex-col gap-4 items-center justify-center px-4 col-start">
               <div className="container_fluid">
-                <div className="xl:w-[65%] col-center xl:block">
+                <div className="lg:w-[65%] col-center xl:block mx-auto xl:mx-0">
                   <h2 className=" ~leading-[3rem]/[5.25rem] ~text-[2.5rem]/[5rem] text-white text-center xl:text-left">
                     <span className="font-semibold font-kanit">
                       Building the Future with Strength and Precision

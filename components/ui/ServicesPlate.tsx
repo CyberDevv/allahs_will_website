@@ -2,23 +2,26 @@ import React from "react";
 import { useId } from "react";
 import { Button } from "./button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function FeaturesSectionDemo({
   label,
   desc,
   isOdd,
   image,
+  link,
 }: {
   label: string;
   desc: string;
   isOdd?: boolean;
   image?: string;
+  link?: string;
 }) {
   return (
     <div
       className={`bg-[url('/images/${
         image || "service1"
-      }.png')] bg-cover col-span-2 xl:col-span-1 overflow-hidden`}
+      }.png')] bg-cover overflow-hidden`}
     >
       <div
         className={`${
@@ -28,25 +31,23 @@ export function FeaturesSectionDemo({
         }  h-full w-full ~px-[1.875rem]/[2.5rem] ~py-[2.5rem]/[3.125rem] text-primary-foreground flex flex-col relative bg-gradient-to-b`}
       >
         <Grid size={20} />
-        <h3 className="font-kanit font-semibold ~text-[1.5rem]/[1.875rem] 2xl:text-4xl">
+        <h3 className="font-kanit font-semibold ~text-[1.5rem]/[1.875rem] 2xl:text-4xl text-center lg:text-left">
           {label}
         </h3>
-        <p className="font-lato font-medium leading-[28px] ~text-[0.75rem]/[0.875rem] 2xl:text-base text-[#D4D7DD] ~mt-[1.5rem]/[1.875rem]">
+        <p className="font-lato font-medium lg:leading-[28px] ~text-[0.8rem]/[0.875rem] 2xl:text-base text-[#D4D7DD] ~mt-[1rem]/[1.5rem] text-center lg:text-left ~mb-2/4">
           {desc}
         </p>
 
-        <Button
-          variant={!isOdd ? "secondary" : "default"}
-          className="mt-auto ml-auto"
-          size="icon"
-        >
-          <Image
-            src="/svg/arrow-right.svg"
-            width={20}
-            height={20}
-            alt="arrow-right"
-          />
-        </Button>
+        <Link href={link || "#"} className="mt-auto mx-auto lg:mr-0 ">
+          <Button variant={!isOdd ? "secondary" : "default"} size="icon">
+            <Image
+              src="/svg/arrow-right.svg"
+              width={20}
+              height={20}
+              alt="arrow-right"
+            />
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -6,7 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+import { serviceTitles } from "@/data/services";
+
+const availableServices = [...serviceTitles, "Other"];
 
 type InputLabelProps = {
   label: string;
@@ -61,6 +65,19 @@ const Page = () => {
   const [phone, setPhone] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const [service, setService] = React.useState("");
+
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const serviceParam = searchParams.get("service");
+    if (serviceParam) {
+      const found = availableServices.find(
+        (s) => s.toLowerCase().includes(serviceParam.toLowerCase())
+      );
+      setService(found || "Other");
+    }
+  }, [searchParams]);
 
   return (
     <div>
@@ -80,6 +97,30 @@ const Page = () => {
             type="tel"
           />
           <InputLabel label="Address" value={address} setValue={setAddress} />
+
+          {/* Service Dropdown */}
+          <div className="grid w-full items-center gap-3 lg:col-span-2">
+            <Label
+              className="font-lato text-[#41444B] ~text-[0.938rem]/[1.063rem] leading-normal xl:leading-[28px] font-medium"
+              htmlFor="Service"
+            >
+              Service
+            </Label>
+            <select
+              id="Service"
+              className="font-lato text-[#41444B] ~text-[0.938rem]/[1.063rem] leading-normal xl:leading-[28px] border border-gray-300 rounded px-3 py-2"
+              value={service}
+              onChange={(e) => setService(e.target.value)}
+            >
+              <option value="">Select a service</option>
+              {availableServices.map((srv) => (
+                <option key={srv} value={srv}>
+                  {srv}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <InputLabel
             label="Message"
             value={message}

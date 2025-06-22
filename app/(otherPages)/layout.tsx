@@ -25,6 +25,11 @@ const pageInfo: Record<
     caption: "Get in touch with us",
     image: "/images/hero_contact.png",
   },
+  "/services": {
+    title: "Services",
+    caption: "Comprehensive Construction Solutions Tailored to Your Needs",
+    image: "/images/hero_services.png",
+  },
   "/hse-policy": {
     title: "HSE Policy",
     caption: "Discover our commitment to health, safety, and the environment",

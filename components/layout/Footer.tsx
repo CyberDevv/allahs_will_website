@@ -42,6 +42,7 @@ const Footer = () => {
                 <Links href="/services" label="Our Services" />
                 <Links href="/portfolio" label="Our Projects" />
                 <Links href="/hse-policy" label="HSE Policy" />
+                <Links href="/quality-policy" label="Quality Policy" />
               </ul>
             </div>
             <div>

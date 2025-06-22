@@ -16,8 +16,6 @@
     "@tabler/icons-react": "^3.34.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "flowbite": "^2.5.1",
-    "flowbite-react": "^0.10.1",
     "framer-motion": "^11.5.5",
     "hamburger-react": "^2.5.1",
     "lenis": "^1.1.14",

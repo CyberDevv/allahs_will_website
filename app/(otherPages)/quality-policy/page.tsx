@@ -1,6 +1,10 @@
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title: "Quality Policy | AWSC",
+};
+
 const Page = () => {
   return (
     <section className="container_fluid ~py-[3rem]/[5rem]">

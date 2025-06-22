@@ -2,16 +2,15 @@ import GetQuote from "@/components/about/GetQuote";
 import { Infrastructure } from "@/components/home/Infrastructures";
 import { ImageModal } from "@/components/ImageModal";
 import { Button } from "@/components/ui/button";
+import ChromaGrid from "@/components/ui/ChromaGrid/ChromaGrid";
 import { infrastructures } from "@/data/infrastructure";
+import { team } from "@/data/management";
 import { yearsOfExperience } from "@/data/misc";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const images = [
-  { src: "/images/service1.png", label: "ISO Number Award" },
-  { src: "/images/service2.png", label: "ISO Number Award" },
-  { src: "/images/service3.png", label: "ISO Number Award" },
   { src: "/images/service1.png", label: "ISO Number Award" },
   { src: "/images/service2.png", label: "ISO Number Award" },
   { src: "/images/service3.png", label: "ISO Number Award" },
@@ -55,7 +54,7 @@ const Page = () => {
             <p className="font-lato text-[#41444B] ~text-base/xl leading-normal xl:leading-[28px] ~mt-[1.25rem]/[1.875rem] text-center lg:text-start">
               Greetings and welcome to Allah&apos;s Will Steel Construction
               (Nig.) Ltd. We are proud of many great projects we have built in
-              our 25-plus year history. Our experience includes projects in
+              our {yearsOfExperience} year history. Our experience includes projects in
               Abuja, Lagos, Benin, Oyo, Kano and other state in Nigeria. We have
               extensive expertise in oil and gas, industrial projects and an
               impressive resume of work in mission critical and retail
@@ -73,11 +72,25 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="max-w-md lg:max-w-lg mx-auto xl:max-w-none ~mt-[3.875rem]/[4.5rem]">
+        <div className="~my-[5rem]/[12.5rem]">
+          <div className="grid lg:grid-cols-3 ~gap-5/10 max-w-md mx-auto lg:max-w-none">
+            {infrastructures?.map((item, idx) => (
+              <Infrastructure
+                key={idx}
+                svg={item?.svg}
+                label={item?.label}
+                desc={item?.desc}
+                isSpotLight={true}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="max-w-md lg:max-w-none ~mt-[3.875rem]/[4.5rem]">
           <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] ~mt-1/2.5 text-center lg:text-start">
             Mission / Vision Statement
           </h4>
-          <ul className="list-decimal ~mt-[1.25rem]/[1.875rem] ~space-y-1.5/3 font-lato text-[#41444B] ~text-base/xl leading-normal xl:leading-[28px] text-center lg:text-start">
+          <ul className="list-decimal list-inside ~mt-[1.25rem]/[1.875rem] ~space-y-1.5/3 font-lato text-[#41444B] ~text-base/xl leading-normal xl:leading-[28px] text-center lg:text-start">
             <li>
               To maintain and develop innovative techniques in service delivery.
             </li>
@@ -98,25 +111,41 @@ const Page = () => {
             <li>To ensure quality is maintained in all our services.</li>
           </ul>
         </div>
-      </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 ~gap-5/10 container_fluid ~my-[2rem]/[3.75rem]">
-        {images?.map((image, idx) => {
-          return <ImageModal key={idx} src={image.src} label={image.label} />;
-        })}
-      </div>
+        <div className="~mt-[3.875rem]/[4.5rem]">
+          <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] text-center lg:text-start">
+            Management Team
+          </h4>
 
-      <div className="container_fluid ~my-[5rem]/[12.5rem]">
-        <div className="grid lg:grid-cols-3 ~gap-5/10 max-w-md lg:max-w-lg mx-auto xl:max-w-none">
-          {infrastructures?.map((item, idx) => (
-            <Infrastructure
-              key={idx}
-              svg={item?.svg}
-              label={item?.label}
-              desc={item?.desc}
-              isSpotLight={true}
-            />
-          ))}
+          <p className="font-lato text-[#41444B] ~text-base/xl leading-normal xl:leading-[28px] ~mt-[1.25rem]/[1.875rem] text-center lg:text-start">
+            The Management team has the Chairman/Chief Executive Officer at the
+            centre flanked by his dedicated and seasoned professionals who have
+            always demonstrated great managerial ability. The team maintains an
+            excellent team work that provides a conducive and friendly
+            environment which has guaranteed our success in the industry.
+          </p>
+
+          <ChromaGrid
+            items={team}
+            radius={300}
+            damping={0.45}
+            fadeOut={0.6}
+            ease="power3.out"
+            className="~mt-8/16"
+          />
+        </div>
+
+        <div className="~mt-[3.875rem]/[4.5rem]">
+          <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] text-center lg:text-start">
+            Awards & Recognitions
+          </h4>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 ~gap-5/10 ~mt-[1.25rem]/[1.875rem]">
+            {images?.map((image, idx) => {
+              return (
+                <ImageModal key={idx} src={image.src} label={image.label} />
+              );
+            })}
+          </div>
         </div>
       </div>
 

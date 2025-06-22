@@ -42,7 +42,7 @@ export const Infrastructure = ({
     <>
       {isSpotLight ? (
         <SpotlightCard
-          className="custom-spotlight-card"
+          className="w-full"
           spotlightColor="rgba(0, 33, 91, 0.2)"
         >
           <Comp />

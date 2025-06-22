@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { FooterBackground } from "../ui/FooterBackground";
 import { phoneNumber } from "@/data/contact";
+import { yearsOfExperience } from "@/data/misc";
 
 const Footer = () => {
   const Links = ({ href, label }: { href: string; label: string }) => (
@@ -16,7 +17,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#02173b]">
       <FooterBackground>
-        <div className="container_fluid py-[80px] grid lg:grid-cols-[420px_1fr] lg:gap-x-28">
+        <div className="container_fluid py-[80px] grid xl:grid-cols-[420px_1fr] xl:gap-x-28">
           {/* Logo */}
           <div>
             <Image
@@ -27,12 +28,13 @@ const Footer = () => {
               className="w-28"
             />
             <p className="text-[#EBECEE] mt-2 font-lato ~text-[0.938rem]/[1.063rem] leading-[28px]">
-              Fusce eu magna quis velit efficitur rhoncus. Vivamus vehicula,
-              neque a velit
+              With {yearsOfExperience} years of expertise, we deliver precision-engineered steel
+              structures for industrial, commercial, and energy projects across
+              Nigeria.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-20 lg:mt-0">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-20 xl:mt-0">
             <div>
               <h2 className="~mb-[1rem]/[1.5rem] font-kanit ~text-[1.063rem]/[1.375rem] ~leading-[1.063rem]/[1.375rem] text-white">
                 Quick Links

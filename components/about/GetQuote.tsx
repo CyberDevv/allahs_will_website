@@ -36,12 +36,11 @@ const GetQuote = () => {
                 Get a Quote
               </h2>
               <h2 className=" ~leading-[2.5rem]/[4rem] font-semibold ~text-[2.1875rem]/[3.4375rem] text-white text-center font-kanit">
-                Start Building your Solution Today
+                Start Building Your Steel Solution Today
               </h2>
               <p className="xl:w-3/5 ~text-[0.938rem]/[1.063rem] xl:leading-[28px] text-white ~my-3/5 text-center font-lato">
-                In id enim odio. Nunc aliquet diam tortor, at venenatis urna
-                sagittis non. Suspendisse sodales nulla sit amet sem
-                condimentum, ac euismod nibh elementum.
+                Share your project details with our experts. We&apos;ll provide
+                a customized steel construction quote within 48 hours.
               </p>
               <Link href="/contact">
                 <Button variant="secondary" className="py-5 px-16 h-auto">

@@ -4,6 +4,7 @@ import { FeaturesSectionDemo } from "../ui/ServicesPlate";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { serviceCategories } from "@/data/services";
+import { yearsOfExperience } from "@/data/misc";
 
 const AboutUs = () => {
   return (
@@ -18,14 +19,15 @@ const AboutUs = () => {
           </h4>
           <p className="font-lato text-[#41444B] ~text-[0.938rem]/[1.063rem] leading-normal xl:leading-[28px] ~mt-[1.25rem]/[1.875rem] text-center xl:text-start">
             Allah&apos;s Will Steel Construction (Nig.) Ltd. is a premier
-            construction company with over 25 years of excellence in delivering
-            innovative and high-quality projects across Nigeria, including
-            Abuja, Lagos, Benin, Oyo, and Kano. Specializing in oil and gas,
-            industrial, mission-critical, and retail construction, we combine
-            expertise, safety, and sustainability to meet your needs. Our
-            commitment to cutting-edge techniques, community care, and
-            unwavering quality ensures success in every project we undertake.
-            Trust us to build your vision with precision and reliability.
+            construction company with over {yearsOfExperience?.replace("+", "")}{" "}
+            years of excellence in delivering innovative and high-quality
+            projects across Nigeria, including Abuja, Lagos, Benin, Oyo, and
+            Kano. Specializing in oil and gas, industrial, mission-critical, and
+            retail construction, we combine expertise, safety, and
+            sustainability to meet your needs. Our commitment to cutting-edge
+            techniques, community care, and unwavering quality ensures success
+            in every project we undertake. Trust us to build your vision with
+            precision and reliability.
           </p>
           <Link href="/about">
             <Button

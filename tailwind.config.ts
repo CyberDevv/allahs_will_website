@@ -1,4 +1,3 @@
-import flowbite from "flowbite-react/tailwind";
 import svgToDataUri from "mini-svg-data-uri";
 import type { Config } from "tailwindcss";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
@@ -11,7 +10,6 @@ const config = {
       "./pages/**/*.{js,ts,jsx,tsx,mdx}",
       "./components/**/*.{js,ts,jsx,tsx,mdx}",
       "./app/**/*.{js,ts,jsx,tsx,mdx}",
-      flowbite.content(),
     ],
     extract,
   },
@@ -105,7 +103,6 @@ const config = {
     }),
     addVariablesForColors,
     require("tailwindcss-animate"),
-    flowbite.plugin(),
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

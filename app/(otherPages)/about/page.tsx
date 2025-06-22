@@ -3,18 +3,13 @@ import { Infrastructure } from "@/components/home/Infrastructures";
 import { ImageModal } from "@/components/ImageModal";
 import { Button } from "@/components/ui/button";
 import ChromaGrid from "@/components/ui/ChromaGrid/ChromaGrid";
+import { certs } from "@/data/cert";
 import { infrastructures } from "@/data/infrastructure";
 import { team } from "@/data/management";
 import { yearsOfExperience } from "@/data/misc";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-const images = [
-  { src: "/images/service1.png", label: "ISO Number Award" },
-  { src: "/images/service2.png", label: "ISO Number Award" },
-  { src: "/images/service3.png", label: "ISO Number Award" },
-];
 
 export const metadata = {
   title: "About AWSC | AWSC",
@@ -54,11 +49,11 @@ const Page = () => {
             <p className="font-lato text-[#41444B] ~text-base/xl leading-normal xl:leading-[28px] ~mt-[1.25rem]/[1.875rem] text-center lg:text-start">
               Greetings and welcome to Allah&apos;s Will Steel Construction
               (Nig.) Ltd. We are proud of many great projects we have built in
-              our {yearsOfExperience} year history. Our experience includes projects in
-              Abuja, Lagos, Benin, Oyo, Kano and other state in Nigeria. We have
-              extensive expertise in oil and gas, industrial projects and an
-              impressive resume of work in mission critical and retail
-              construction. Please enjoy your trip around the world of
+              our {yearsOfExperience} year history. Our experience includes
+              projects in Abuja, Lagos, Benin, Oyo, Kano and other state in
+              Nigeria. We have extensive expertise in oil and gas, industrial
+              projects and an impressive resume of work in mission critical and
+              retail construction. Please enjoy your trip around the world of
               Allah&apos;s Will Steel Construction Nig. Ltd. We look forward for
               an opportunity to serve build-up of your needs in the near future.
             </p>
@@ -137,10 +132,10 @@ const Page = () => {
 
         <div className="~mt-[3.875rem]/[4.5rem]">
           <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] text-center lg:text-start">
-            Awards & Recognitions
+            Certificates
           </h4>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 ~gap-5/10 ~mt-[1.25rem]/[1.875rem]">
-            {images?.map((image, idx) => {
+            {certs?.map((image, idx) => {
               return (
                 <ImageModal key={idx} src={image.src} label={image.label} />
               );

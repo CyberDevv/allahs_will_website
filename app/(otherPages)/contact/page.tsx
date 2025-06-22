@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { serviceTitles } from "@/data/services";
 
@@ -59,7 +59,7 @@ const InputLabel: React.FC<InputLabelProps> = ({
   );
 };
 
-const Page = () => {
+const Contact = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [phone, setPhone] = React.useState("");
@@ -72,8 +72,8 @@ const Page = () => {
   useEffect(() => {
     const serviceParam = searchParams.get("service");
     if (serviceParam) {
-      const found = availableServices.find(
-        (s) => s.toLowerCase().includes(serviceParam.toLowerCase())
+      const found = availableServices.find((s) =>
+        s.toLowerCase().includes(serviceParam.toLowerCase())
       );
       setService(found || "Other");
     }
@@ -147,5 +147,13 @@ const Page = () => {
     </div>
   );
 };
+
+function Page() {
+  return (
+    <Suspense>
+      <Contact />
+    </Suspense>
+  );
+}
 
 export default Page;

@@ -67,7 +67,7 @@ export default function ImageGallery({
               >
                 &#8592;
               </button>
-              <div className="relative w-[95vw] max-w-5xl aspect-[4/3] rounded overflow-hidden flex items-center justify-center bg-black">
+              <div className="relative w-[95vw] max-w-5xl aspect-[4/3] rounded overflow-hidden flex items-center justify-center bg-white">
                 {/* Mobile arrows */}
                 <button
                   className="sm:hidden absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl z-10 p-2 bg-black/40 rounded-full"
@@ -81,7 +81,7 @@ export default function ImageGallery({
                   src={`/images/projects/${projectType}/${images[currentIdx]}`}
                   alt={images[currentIdx]}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="95vw"
                 />
                 <button

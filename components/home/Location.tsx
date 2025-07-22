@@ -1,4 +1,5 @@
 import { address, email, phoneNumber } from "@/data/contact";
+import { IconBrandWhatsapp, IconMail, IconPhone } from "@tabler/icons-react";
 import Image from "next/image";
 import React from "react";
 
@@ -33,22 +34,38 @@ const Location = () => {
         </div>
 
         <div className="xl:-mt-48 xl:between w-full xl:space-x-4">
-          <div className="bg-white text-primary w-full px-4 ~md:~py-5/[1.875rem] center xl:start space-x-5 md:shadow-2xl">
-            <Image src="/svg/phone.svg" width={65} height={65} alt="phone" />
-            <div>
-              <h6 className="font-kanit uppercase font-light ~text-[0.75rem]/[0.875rem] leading-[15px] text-[#41444B]">
-                Company Phones
-              </h6>
-              <p className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left mt-[10px]">
-                {phoneNumber}
-              </p>
-              <p className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left mt-[5px]">
-                {phoneNumber}
-              </p>
+          <div className="bg-white text-primary w-full px-4 ~md:~py-5/[1.875rem] md:shadow-2xl space-y-4">
+            <div className="center xl:start space-x-5">
+              <IconPhone className="size-[45px] text-primary" />
+              <div>
+                <h6 className="font-kanit uppercase font-light ~text-[0.75rem]/[0.875rem] leading-[15px] text-[#41444B]">
+                  Company Phones
+                </h6>
+                <div className="mt-4">
+                  {phoneNumber?.map((tel) => (
+                    <a
+                      href={`tel:${tel}`}
+                      key={tel}
+                      className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left mt-[6px] block"
+                    >
+                      {tel}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="center xl:start space-x-5">
+              <IconBrandWhatsapp className="size-[45px] text-primary" />
+              <a
+                href={`https://wa.me/${phoneNumber[0]}`}
+                className="font-medium font-kanit ~text-[0.875rem]/[1.25rem] leading-[32px] text-center xl:text-left"
+              >
+                {phoneNumber[0]}
+              </a>
             </div>
           </div>
           <div className="bg-white text-primary w-full px-4 ~md:~py-5/[1.875rem] center xl:start space-x-5 md:shadow-2xl mt-5 xl:mt-0">
-            <Image src="/svg/email.svg" width={65} height={65} alt="phone" />
+            <IconMail className="size-[45px] text-primary" />
             <div>
               <h6 className="font-kanit uppercase font-light ~text-[0.75rem]/[0.875rem] leading-[15px] text-[#41444B]">
                 Email

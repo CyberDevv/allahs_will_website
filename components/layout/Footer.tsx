@@ -28,9 +28,9 @@ const Footer = () => {
               className="w-28"
             />
             <p className="text-[#EBECEE] mt-2 font-lato ~text-[0.938rem]/[1.063rem] leading-[28px]">
-              With {yearsOfExperience} years of expertise, we deliver precision-engineered steel
-              structures for industrial, commercial, and energy projects across
-              Nigeria.
+              With {yearsOfExperience} years of expertise, we deliver
+              precision-engineered steel structures for industrial, commercial,
+              and energy projects across Nigeria.
             </p>
           </div>
 
@@ -66,11 +66,13 @@ const Footer = () => {
                   Ogunpa Channelization, Adjacent Soka Bus Stop, Mapo Hill,
                   Ibadan
                 </li>
-                <li>
-                  <a href={`tel:${phoneNumber}`} className="hover:underline">
-                    {phoneNumber}
-                  </a>
-                </li>
+                {phoneNumber?.map((tel) => (
+                  <li key={tel}>
+                    <a  href={`tel:${tel}`} className="hover:underline">
+                      {tel}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

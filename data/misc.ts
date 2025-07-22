@@ -1,2 +1,2 @@
-export const yearsOfExperience = "25+";
-export const noOfProjects = "245";
+export const yearsOfExperience = "35+";
+export const noOfProjects = "450+";

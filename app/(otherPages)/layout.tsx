@@ -114,9 +114,9 @@ export default function Layout({
             <p className="uppercase text-sm font-kanit text-black text-center lg:text-left">
               Call us today
             </p>
-            <a href={`tel:${phoneNumber}`} className="hover:underline">
+            <a href={`tel:${phoneNumber[0]}`} className="hover:underline">
               <h6 className="text-primary font-kanit font-medium ~text-[1.625rem]/[2.125rem] leading-[38px] text-center lg:text-left mx-auto lg:w-full">
-                {phoneNumber}
+                {phoneNumber[0]}
               </h6>
             </a>
           </div>

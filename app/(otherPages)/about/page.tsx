@@ -107,7 +107,7 @@ const Page = () => {
           </ul>
         </div>
 
-        <div className="~mt-[3.875rem]/[4.5rem]">
+        {/* <div className="~mt-[3.875rem]/[4.5rem]">
           <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] text-center lg:text-start">
             Management Team
           </h4>
@@ -128,7 +128,7 @@ const Page = () => {
             ease="power3.out"
             className="~mt-8/16"
           />
-        </div>
+        </div> */}
 
         <div className="~mt-[3.875rem]/[4.5rem]">
           <h4 className="text-primary font-kanit font-semibold ~text-[2rem]/[3.438rem] leading-tight xl:leading-[64px] text-center lg:text-start">
